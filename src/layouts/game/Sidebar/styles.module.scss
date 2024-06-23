@@ -1,0 +1,278 @@
+.wrapper {
+  width: 127px;
+  background-color: #000;
+  // height: 93%;
+  position: relative;
+  z-index: 111;
+  max-height: 100%;
+}
+
+.account-info__rank {
+  display: none;
+}
+
+.account-info__avatar {
+  margin-right: 4px;
+}
+
+.account-info__name {
+  float: left;
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 81px;
+}
+
+.account-info__username {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 81px;
+  color: #ff9b00;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  width: 115px;
+  height: 65px;
+  margin: 7px auto;
+  position: relative;
+
+  &::after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: -4px;
+    background-color: #333;
+  }
+
+  &:hover {
+    border-radius: 2px;
+    background-color: #346491;
+    color: #fff;
+    flex-direction: column;
+
+    & .account-info__avatar {
+      display: none;
+    }
+
+    & .account-info__body {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      text-align: center;
+    }
+
+    & .account-info__username {
+      color: #fff;
+      //   text-align: center;
+    }
+
+    & .account-info__rank {
+      display: block;
+    }
+  }
+}
+
+.account-info__body {
+}
+
+.balance-gift {
+  padding: 12px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    background-color: #333;
+  }
+}
+
+.balance-gift__balance {
+  width: 16px;
+  height: 16px;
+  line-height: 12px;
+  font-size: 19px;
+  display: flex;
+  margin-top: 15px;
+  margin-right: 8px;
+  text-align: center;
+  font-family: Arial;
+  color: #ffcc00;
+  width: 115px;
+  margin: 0 auto 8px;
+}
+
+.balance-gift__title {
+  margin-right: 8px;
+  width: 'auto';
+  height: 'auto';
+}
+
+.balance-gift__value {
+  font-size: 17px;
+}
+
+.balance-gift__gift {
+  color: #f54b6f;
+  font-size: 14px;
+  display: flex;
+  width: 115px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.balance-gift__title {
+  margin-right: 5px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.balance-gift__value {
+}
+
+.balance-gift__help {
+  position: absolute;
+  background: url('/Content/images/icon_giftDoubt.svg');
+  background-size: 100%;
+  width: 21px;
+  height: 21px;
+  z-index: 3;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.history-bet {
+  width: 115px;
+  height: 30px;
+  border: 1px solid #5d5d5d;
+  outline: none;
+  padding: 4px;
+  border-radius: 3px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.auto-confirm__box {
+  display: flex;
+  width: 115px;
+  margin: 12px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-confirm__text {
+  color: #fff;
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.auto-confirm__input {
+  width: 32px;
+  height: 14px;
+  padding: 4px;
+  border-radius: 11px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  position: relative;
+  background-color: #5a5a5a;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    background-color: #eee;
+    width: 14px;
+    left: 0px;
+    border-radius: 50%;
+  }
+}
+
+.auto-confirm__check {
+  background-color: #3ab816;
+
+  &::after {
+    left: 51%;
+  }
+}
+
+.list-game {
+  border-bottom: 2px solid #333333;
+  padding: 5px 0 15px 0;
+}
+
+.item-game {
+  display: block;
+  width: 100px;
+  height: 38px;
+  text-align: center;
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #b0c9ff;
+  position: relative;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-game-xd__active {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(80, 110, 230, 1) 100%
+  );
+  position: relative;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.item-game__mc {
+  color: #ffd100;
+
+  &--active {
+    background-image: url(/Content/images/btn_VIPnav.png);
+    position: relative;
+    color: #fff;
+    border: 1px solid #333;
+  }
+}
+
+.item-game__chinaBacca {
+  color: #6ae100;
+}
+
+.item-game__blockchainBacca {
+  color: #49e5d6;
+}

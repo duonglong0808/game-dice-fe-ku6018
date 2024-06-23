@@ -1,0 +1,119 @@
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Microsoft JhengHei, Helvetica, sans-serif;
+  background-color: #0c052f;
+  min-width: 864px;
+  min-height: 550px;
+}
+
+.loading__box {
+  width: 100%;
+  height: 100%;
+  background-image: url(/Content/images/img_loading.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.image__model {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  width: 1420px;
+  margin: 0 auto;
+}
+
+.image__box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+}
+
+.image__text {
+  margin: 0 auto;
+}
+
+.loading__body {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  // margin: auto;
+  text-align: center;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading__body--top {
+  font-size: 32px;
+  line-height: 1em;
+  font-weight: bold;
+  margin-bottom: 3px;
+  background: #ffe360;
+  text-align: center;
+  max-width: 100vw;
+  background: -webkit-linear-gradient(bottom, #ffe360 0, #fff 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loading__body--text {
+  font-size: 32px;
+  line-height: 1em;
+  font-weight: bold;
+  margin-bottom: 3px;
+  background: #ffe360;
+  background: -webkit-linear-gradient(bottom, #ffe360 0, #fff 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loading__text {
+  color: #ffe360;
+  font-size: 16px;
+  line-height: 1em;
+  margin-bottom: 19px;
+}
+
+.loading__line {
+  width: 80%;
+  max-width: 100vw;
+  height: 5px;
+  background: url(/Content/images/img_loadingbar.png) no-repeat center;
+  background-size: 100% auto;
+  position: relative;
+  margin: 12px auto 0;
+
+  &::before {
+    content: '';
+    width: 15%;
+    height: 18px;
+    position: absolute;
+    top: -7px;
+    background: url(/Content/images/img_loadingLight.png) no-repeat center;
+    background-size: 100% auto;
+    animation-name: loadingLight;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes loadingLight {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: calc(100% - 98px);
+  }
+}

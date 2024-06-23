@@ -1,0 +1,137 @@
+.wrapper {
+  position: absolute;
+  top: 226px;
+  right: 257px;
+  width: 103px;
+  height: 103px;
+  z-index: 2;
+  will-change: transform;
+  display: block;
+}
+
+.countDNum {
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  line-height: 103px;
+  text-align: center;
+  font-size: 40px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #fff;
+}
+
+.icon_message_line {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 103px;
+  height: 103px;
+  background-image: url(/Content/images/icon_message_line.png);
+  animation: 1.5s linear 0s normal none infinite rotate;
+  -webkit-animation: 1.5s linear 0s normal none infinite rotate;
+}
+
+.sec10 .icon_message_line {
+  background-image: url(/Content/images/icon_message_line_red.png);
+}
+
+.sec10 .countDNum {
+  color: #f00;
+}
+
+.loadingImg {
+  width: 103px;
+  height: 103px;
+  background-image: url(/Content/images/icon_message_start.png);
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.wrapper-control {
+  position: absolute;
+  top: 80%;
+  right: 46%;
+  z-index: 2;
+  will-change: transform;
+  display: flex;
+
+  &__box {
+    width: 48px;
+    height: 44px;
+    margin: 0 10px;
+    position: relative;
+
+    &--bg {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      right: 0px;
+      bottom: 0;
+      background: url(/Content/images/vn/json/bettingButtons.png) no-repeat;
+      background-size: 220%;
+      background-position: -47px -266px;
+      margin: 0 0px 0 0;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    right: 0px;
+    bottom: 0px;
+    background: url(/Content/images/vn/json/bettingButtons.png) no-repeat;
+    width: 60%;
+    height: 70%;
+    background-size: 340%;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  &__rollback {
+    background-position: -68px -31px;
+  }
+
+  &__swapper {
+    background-position: -62px -125px;
+    background-size: 340%;
+  }
+
+  &__check {
+    background-position: -68px -62px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    left: 2%;
+    top: calc(100svw * 0.49 - 60px);
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+  }
+
+  .countDNum {
+    font-size: 18px;
+    line-height: 45px;
+  }
+  .countDNum,
+  .loadingImg,
+  .icon_message_line {
+    background-size: contain;
+    width: 45px;
+    height: 45px;
+  }
+
+  .wrapper-control {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+.main_layout {
+    position: absolute; /* Đảm bảo phần tử con được định vị tương đối theo phần tử cha */
+    top: 0; /* Đặt phần tử con ở đầu phần tử cha */
+    left: 0; /* Đặt phần tử con ở bên trái phần tử cha */
+    width: 100%; /* Đảm bảo phần tử con chiếm toàn bộ chiều rộng của phần tử cha */
+    height: 100%;
+    margin: 0 8px;
+}

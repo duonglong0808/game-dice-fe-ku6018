@@ -1,0 +1,19 @@
+.slider-wrapper {
+  padding: 10px 0 11px;
+  width: 1520px;
+  background-color: #222;
+  max-width: 100%;
+  position: relative;
+  height: 200px;
+}
+
+.slider__item {
+  background: url('/Content/images/AD202309241601514750.jpg') no-repeat center center;
+  height: 180px;
+  border-radius: 7px;
+  border: 2px solid #545454;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  z-index: 5;
+}

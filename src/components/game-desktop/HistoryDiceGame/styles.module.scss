@@ -1,0 +1,156 @@
+.wrapper {
+}
+
+.wrapper-table {
+  background-color: #2a2a2a;
+  border-right: 1px solid var(--background-cell-table-border);
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  height: 166px;
+  width: 126px;
+  //   float: left;
+  cursor: default;
+  font-size: 13px;
+
+  &__tbody {
+    border-collapse: separate;
+    border-spacing: 0;
+    cursor: default;
+  }
+
+  & tr,
+  & td,
+  & th {
+    background-color: var(--background-dice-history);
+    border-top: 1px solid var(--background-cell-table-border);
+    font-weight: normal;
+    vertical-align: middle;
+    height: 28px;
+  }
+
+  & tr th:first-child {
+    padding: 0;
+  }
+
+  .CD_w50 {
+    width: 46%;
+  }
+
+  .CD_nameGray,
+  .CD_nameBlue,
+  .CD_nameBlue2,
+  .CD_nameRed,
+  .CD_Num {
+    display: inline-block;
+    white-space: nowrap;
+    float: left;
+    color: #000;
+  }
+
+  .CD_nameBlue,
+  .CD_nameBlue2 {
+    color: #7895ff !important;
+  }
+
+  .CD_nameBlue2 {
+    margin-left: -5px;
+  }
+
+  .CD_nameGray {
+    color: var(--text-dice-history);
+    margin-left: 2px;
+    margin-left: 2px;
+  }
+
+  .CD_nameBlue {
+    width: 50%;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .CD_Player {
+    color: #007ffe;
+    cursor: default;
+  }
+
+  .CD_nameRed {
+    color: #ff5b5b;
+    margin-left: 6px;
+  }
+
+  .CD_nameRedDa {
+  }
+
+  .CD_Num {
+    width: 55%;
+    text-align: center;
+    position: relative;
+    top: 1px;
+  }
+
+  .CD_Num.SD_CD_Num {
+    color: var(--text-dice-history);
+  }
+
+  .CD_yellow_ball,
+  .CD_orange_ball,
+  .CD_blue_ball,
+  .CD_green_ball,
+  .CD_White_ball {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-size: 17px;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    margin-top: 2px;
+    margin-left: 3px;
+    cursor: pointer;
+  }
+
+  .CD_White_ball {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+    line-height: 18px;
+  }
+
+  .CD_blue_ball {
+    background-color: #4382c7;
+  }
+
+  .CD_yellow_ball {
+    background-color: #eade54;
+    color: #000;
+  }
+
+  .CD_orange_ball {
+    background-color: #e64d2e;
+  }
+
+  .CD_green_ball {
+    background-color: #7bce40;
+    color: #000;
+  }
+
+  .CD_Player .CD_White_ball,
+  .CD_Player .CD_blue_ball,
+  .CD_Player .CD_yellow_ball,
+  .CD_Player .CD_orange_ball,
+  .CD_Player .CD_green_ball {
+    cursor: default;
+    box-shadow: none;
+  }
+
+  .CD_Num.CD_alter {
+    width: 89px !important;
+    float: left;
+    color: var(--text-dice-history);
+  }
+}

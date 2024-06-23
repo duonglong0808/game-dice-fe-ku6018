@@ -1,0 +1,127 @@
+.wrapper {
+}
+
+.wrapper-table {
+  background-color: var(--background-cell-table);
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  // height: 166px;
+  height: 112px;
+  // width: 207px;
+  // float: left;
+
+  &__tbody {
+  }
+
+  &__tr {
+  }
+  &__td {
+    border-bottom: 1px solid var(--background-cell-table-border);
+    border-right: 1px solid var(--background-cell-table-border);
+    width: 30px;
+    height: 28px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &--CD_ballBox {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+.CD_yellow_ball,
+.CD_green_ball,
+.CD_orange_ball,
+.CD_White_ball,
+.CD_blue_ball {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  font-size: 17px;
+  float: left;
+  font-weight: bold;
+  position: relative;
+  margin-top: 2px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.CD_White_ball {
+  color: #000;
+}
+
+.CD_yellow_ball {
+  background-color: #eade54;
+  color: #000;
+}
+
+.CD_blue_ball {
+  background-color: #4382c7;
+}
+
+.CD_green_ball {
+  background-color: #7bce40;
+  color: #000;
+}
+
+.CD_yellow_ball {
+  background-color: #eade54;
+  color: #000;
+}
+.CD_orange_ball {
+  background-color: #e64d2e;
+}
+
+.btn_CDlatticeSwitch.on {
+  background: url(/Content/Images/btn_latticeSwitch_04.svg) no-repeat;
+}
+
+.btn_CDlatticeSwitch {
+  background: url(/Content/Images/btn_latticeSwitch_03.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  display: block;
+  cursor: pointer;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .wrapper-table {
+    height: 124px;
+    width: 100%;
+    max-height: 100%;
+    border-right: 1px solid #bbb;
+
+    &__td {
+      width: 19.5px;
+      height: 20px;
+      background-color: #fff;
+    }
+  }
+
+  .CD_yellow_ball,
+  .CD_green_ball,
+  .CD_orange_ball,
+  .CD_White_ball,
+  .CD_blue_ball {
+    width: 13px;
+    height: 14px;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper-table {
+    height: 168px;
+    width: 207px;
+    border-bottom: 1px solid #bbb;
+  }
+}

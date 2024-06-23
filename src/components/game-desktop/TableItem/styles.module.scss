@@ -1,0 +1,186 @@
+.dots {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+
+  &__item {
+    background: url('/Content/images/img_PlateW.png') no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #000;
+  }
+  &__item--red {
+    @extend .dots__item;
+    background: url('/Content/images/img_PlateR.png') no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+
+  &__item--multi {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.table__item {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  // padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 15px;
+  align-items: center;
+  color: #fff;
+  flex-shrink: 1;
+  // width: 250px;
+  &__points {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    gap: 5px;
+  }
+
+  &__name {
+    font-size: 30px;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  &__ratio {
+    font-size: 16px;
+    color: #a2aed1;
+    line-height: 16px;
+    font-family: sans-serif;
+
+    & span {
+      font-size: 22px;
+    }
+  }
+
+  &--active:hover {
+    background-color: #75b6d987;
+    cursor: pointer;
+  }
+
+  &--correct {
+    animation: flicker ease-in var(--time-check-result);
+
+    @keyframes flicker {
+      0% {
+        background-color: transparent;
+      }
+      10% {
+        background-color: #75b6d987;
+      }
+      20% {
+        background-color: transparent;
+      }
+      30% {
+        background-color: #75b6d987;
+      }
+      40% {
+        background-color: transparent;
+      }
+      50% {
+        background-color: #75b6d987;
+      }
+      90% {
+        background-color: #75b6d987;
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__tool_tip {
+    position: absolute;
+    // left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    // border-right: 30px solid transparent;
+    border-top: 40px solid #c5bfbf6b;
+    &--show {
+      position: static;
+    }
+    &:hover {
+      // border-right: 30px solid transparent;
+      border-top: 40px solid rgba(117, 128, 217, 0.2);
+    }
+    button {
+      position: absolute;
+      top: -40px;
+      left: -5px;
+      width: 30px;
+      height: 30px;
+      color: white;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+.table__item__points--icon {
+  background-image: url(/Content/images/vn/json/bettingButtons.png);
+  background-repeat: no-repeat;
+  background-position: 10px 0;
+  width: 28px;
+  height: 19px;
+  background-size: cover;
+  position: relative;
+  right: 8px;
+}
+
+.total__point-bet {
+  position: absolute;
+  right: -5px;
+  bottom: -7px;
+  width: 59px;
+  height: 69px;
+  scale: 0.9;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(/Content/images/chips/ReChips.png) no-repeat;
+    background-position: -710px 0;
+  }
+
+  & span {
+    position: absolute;
+    top: 9px;
+    left: -2px;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  & .total__point-bet__long {
+    font-size: 14px;
+    top: 17px;
+  }
+}
+
+.col__row--counter {
+  color: #ffea00;
+}

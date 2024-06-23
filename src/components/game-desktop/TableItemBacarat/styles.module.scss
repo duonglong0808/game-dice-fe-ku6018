@@ -1,0 +1,97 @@
+.parabol {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    right: 0px;
+    top: -142%;
+    width: 101.5%;
+    height: 240%;
+    background-color: transparent;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.item-table {
+  &__active {
+    background-color: #5fa8df8e;
+    animation: flashAndHold 2s forwards; /* Apply the animation */
+
+    &--player::after {
+      background-color: #5fa8df8e;
+      animation: flashAndHold 2s forwards; /* Apply the animation */
+    }
+  }
+}
+
+.total__point-bet {
+  position: absolute;
+  right: 110px;
+  top: -6px;
+  width: 59px;
+  height: 69px;
+  scale: 0.8;
+  z-index: 10;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(/Content/images/chips/ReChips.png) no-repeat;
+    background-position: -710px 0;
+  }
+
+  & span {
+    position: absolute;
+    top: 9px;
+    left: -2px;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  & .total__point-bet__long {
+    font-size: 14px;
+    top: 17px;
+  }
+}
+
+@keyframes flashAndHold {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  25%,
+  75% {
+    background-color: #5fa8df8e;
+  }
+  50% {
+    background-color: transparent;
+  }
+  90% {
+    background-color: #5fa8df8e;
+  }
+  91%,
+  99% {
+    background-color: #5fa8df8e;
+  }
+  99.9%,
+  100% {
+    background-color: transparent;
+  }
+}

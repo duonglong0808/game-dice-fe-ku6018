@@ -1,0 +1,170 @@
+.chips-list {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  &__control {
+    width: 15px;
+    height: 15px;
+  }
+  &__chips {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin-bottom: 0;
+  }
+  &__chip-item {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: relative;
+
+    &--active {
+      display: block;
+    }
+
+    &--image {
+      width: 50px;
+      height: 50px;
+      height: 100%;
+    }
+
+    &--select {
+      transform: scale(1.2);
+      transform-origin: bottom;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(/Content/images/blingChip/icon_chip_select_h.png);
+        background-size: cover;
+
+        transform-origin: bottom;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        right: 0;
+        bottom: 2px;
+        background-size: cover;
+        // transform: scale(1.4);
+        // transform: scale(1.4) rotate(360deg);
+        // animation: spin 0.4s linear infinite;
+
+        @keyframes spin {
+          0% {
+            background-image: url(/Content/images/blingChip/icon_blingChip_in-0.png);
+          }
+          50% {
+            background-image: url(/Content/images/blingChip/icon_blingChip_in-1.png);
+          }
+          100% {
+            background-image: url(/Content/images/blingChip/icon_blingChip_in-0.png);
+          }
+        }
+      }
+    }
+  }
+}
+
+.chips-list__control--left,
+.chips-list__control--right,
+.chips-list__control--left-active,
+.chips-list__control--right-active {
+  background-image: url(/Content/images/blingChip/json/swipeBtn.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+.chips-list__control--right-active {
+  background-position: -48px 0;
+}
+
+.chips-list__control--right {
+  background-position: -71px 0;
+}
+
+.chips-list__control--left {
+  background-position: -24px 0;
+}
+
+@media (max-width: 768px) {
+  .chips-list {
+    gap: 0;
+    justify-content: space-between;
+    margin: 0 4px;
+
+    &__chips {
+      flex: 1;
+      gap: 0;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    &__chip-item {
+      &--select {
+        transform: inherit;
+        // transform-origin: bottom;
+        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url(/Content/images/blingChip/icon_blingChip_out.png);
+          background-size: contain;
+          transform-origin: center;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          scale: 1.1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url(/Areas/Mobile/Images/blingChip/icon_blingChip_in.gif);
+
+          @keyframes spin {
+            0% {
+              background-image: url(/Content/images/blingChip/icon_blingChip_in-0.png);
+            }
+            50% {
+              background-image: url(/Content/images/blingChip/icon_blingChip_in-1.png);
+            }
+            100% {
+              background-image: url(/Content/images/blingChip/icon_blingChip_in-0.png);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chips-list__chip-item,
+  .chips-list__chip-item--image {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}

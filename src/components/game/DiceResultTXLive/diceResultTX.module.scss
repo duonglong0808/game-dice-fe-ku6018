@@ -1,0 +1,158 @@
+.wrapper {
+  border-right: 1px solid var(--border-color-table);
+  border-left: 1px solid var(--border-color-table);
+}
+
+.CD_dataInput {
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  height: 56px;
+}
+
+.table__body {
+  // height: 100%;
+}
+
+.table__tr {
+  // height: 16.6667%;
+  // width: 100%;
+}
+
+.table__td {
+  background-color: var(--background-cell-table);
+  border-bottom: 1px solid var(--background-cell-table-border);
+  border-right: 1px solid var(--background-cell-table-border);
+  height: 18px;
+  width: 19px;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.CD_red_T,
+.CD_blue_T {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+.CD_red_T {
+  color: #ee4238;
+}
+
+.CD_blue_T {
+  color: #3377f2;
+}
+
+.CD_linkBox {
+  position: static;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.CD_green_ball {
+  width: 16px;
+  height: 16px;
+  font-size: 13px;
+  line-height: 17px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-family: Arial;
+  margin: auto;
+  z-index: 32;
+  background-color: #7bce40;
+  color: #000;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.CD_dataInput_CT {
+  border-top: 1px solid var(--background-cell-table-border);
+  background-color: var(--background-CL-history);
+  font-size: 22px;
+  height: 39px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  color: #007eff;
+  line-height: 39px;
+
+  &--box {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  & td {
+    margin-left: 10px;
+  }
+
+  & .red_t {
+    color: #ff5b5b;
+  }
+
+  & .gray_t2 {
+    color: #707070;
+  }
+
+  & .blue_t3 {
+    color: #3377f2;
+  }
+
+  & .green_t {
+    color: #5abd10;
+  }
+}
+
+@media (max-width: 768px) {
+  .CD_dataInput {
+    height: 62px;
+    width: 100%;
+  }
+  .table__td {
+    width: 10.2px;
+    height: 10px;
+    background-color: #fff;
+  }
+
+  .CD_red_T,
+  .CD_blue_T {
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  .CD_green_ball {
+    width: 8px;
+    height: 8px;
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 166px;
+    width: 273px;
+  }
+
+  .CD_dataInput {
+    height: 126px;
+    width: 273px;
+    border-bottom: 1px solid #bbb;
+
+    // max-width: 100%;
+  }
+}

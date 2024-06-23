@@ -1,0 +1,89 @@
+.message__box {
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46%;
+  display: none;
+
+  &--jump {
+    display: block;
+    animation: message_jump 3s linear forwards;
+    -webkit-animation: message_jump 3s linear forwards;
+  }
+
+  &--body {
+    display: table;
+    padding: 0;
+    background-image: none;
+    margin: 0 auto;
+
+    &::after,
+    &::before {
+      background-image: url(/Content/images/bg_blackGradient_Y.png);
+      content: '';
+      width: 100%;
+      height: 2px;
+      display: block;
+      visibility: initial;
+      background-repeat: repeat-y;
+      background-position: center;
+      background-size: 100% auto;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+    }
+  }
+
+  &--text {
+    padding: 5px 100px;
+    display: table;
+    background-image: url(/Content/images/bg_blackGradient.png);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100%;
+    color: #ffd200;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+@keyframes message_jump {
+  0% {
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+  }
+  10% {
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  15% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
+  90% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
+  95% {
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .message__box {
+    &--text {
+      padding: 5px 30px;
+      font-size: 14px;
+    }
+  }
+}

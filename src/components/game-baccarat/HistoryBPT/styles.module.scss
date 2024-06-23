@@ -1,0 +1,31 @@
+.table__td {
+  &--live {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.ba_AT_box {
+  &--live {
+    font-size: 18px;
+    // line-height: 27px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table__td {
+    &--live {
+      // width: 20px;
+      height: 19.5px;
+    }
+  }
+
+  .ba_AT_box {
+    &--live {
+      font-size: 11px;
+      // line-height: 19px;
+      width: 19px;
+      height: 19px;
+    }
+  }
+}

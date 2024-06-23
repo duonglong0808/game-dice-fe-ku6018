@@ -1,0 +1,275 @@
+.header__wrapper {
+  height: 49px;
+  background-color: #121212;
+  border-bottom: 3px solid #346491;
+  padding: 0 20px;
+}
+
+.header__logo {
+  width: 97px;
+  height: 27px;
+  margin-top: 3px;
+  background: url('/Content/images/vn/KU_logo.svg') no-repeat;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.header__game {
+  color: #fff;
+}
+
+.header__room {
+  color: #3bb7d3;
+  margin-left: 5px;
+  position: relative;
+  margin-right: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 5px;
+    bottom: 6px;
+    right: -12px;
+    background-color: #3b3b3b;
+  }
+}
+
+.header__bet {
+  color: #999;
+  margin-right: 4px;
+}
+
+.header__bet--value {
+  color: #ff7a7a;
+}
+
+.header-jackpot {
+  display: flex;
+  align-items: center;
+}
+
+.header-jackpot__image {
+  width: 151px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-jackpot__number {
+}
+
+.header-jackpot__image--center {
+  position: relative;
+}
+
+.header-jackpot__light {
+  position: absolute;
+  top: 0;
+  left: 106px;
+  right: 94px;
+  bottom: 0;
+  margin: auto;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/Content/images/img_jackpotLight.png');
+  pointer-events: none;
+  height: 50px;
+  width: 180px;
+  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-jackpot__crown {
+  width: 94px;
+  height: 30px;
+  background: url('/Content/images/img_jackpotCrown.png') no-repeat center;
+  background-size: auto 100%;
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-jackpot__number {
+  color: #f1bf74;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+  font-weight: 600;
+  margin: 0 8px;
+  transition: all linear 0.5s;
+}
+
+.header-control {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.header-control__item {
+  width: 32px;
+  height: 32px;
+  opacity: 0.85;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.header-control__menu {
+  position: relative;
+  background: url('/Content/images/btn_menu.svg') no-repeat;
+  z-index: 10;
+  height: 100%;
+  background-position: center;
+
+  &:hover .header-control__menu-box {
+    display: grid;
+  }
+}
+
+.header-control__zoom {
+  background: url('/Content/images/btn_enlarge.svg') no-repeat;
+
+  &:hover .header-control__item--text {
+    display: block;
+  }
+}
+
+.header-control__logout {
+  background: url('/Content/images/btn_switch.svg') no-repeat;
+
+  &:hover .header-control__item--text {
+    display: block;
+  }
+}
+
+.header-control__item--text {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  line-height: 18px;
+  height: 18px;
+  text-align: center;
+  // font-weight: ;
+  bottom: -20px;
+  font-size: 12px;
+  padding: 0 5px;
+  min-width: 60px;
+  white-space: nowrap;
+  border-radius: 3px;
+  top: 120%;
+  right: 4px;
+}
+
+.header-control__menu-box {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 12px;
+  color: #000;
+  grid-gap: 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  z-index: 99;
+
+  &:hover {
+    display: grid;
+  }
+}
+
+.header--menu__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  padding: 0 3px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid #fff0;
+  border-radius: 10px;
+  color: #000;
+
+  &:hover {
+    color: #4a8bef;
+    border: 2px solid #b2caee;
+  }
+
+  &::before {
+    content: '';
+    height: 24px;
+    display: block;
+    flex: 1 auto;
+    background-size: auto;
+    background-size: 100%;
+    width: 25px;
+    position: relative;
+    top: 3px;
+  }
+
+  & span {
+    text-align: center;
+    height: 41px;
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 9px;
+  }
+}
+
+.header--menu__item--tranfer::before {
+  background: url('/Content/images/btn_transfer_B.svg') no-repeat center bottom;
+}
+.header--menu__item--history::before {
+  background: url('/Content/images/btn_betRecord_black_B.svg') no-repeat center bottom;
+}
+.header--menu__item--support::before {
+  background: url('/Content/images/btn_customerServ_B.svg') no-repeat center bottom;
+}
+.header--menu__item--help::before {
+  background: url('/Content/images/btn_rule_B.svg') no-repeat center bottom;
+}
+.header--menu__item--volume::before {
+  background: url('/Content/images/btn_sound_B.svg') no-repeat center bottom;
+}
+.header--menu__item--road::before {
+  background: url('/Content/images/icon_header_set_B.svg') no-repeat center bottom;
+}
+.header--menu__item--love::before {
+  background: url('/Content/images/btn_AnchorList_B.svg') no-repeat center bottom;
+}
+.header--menu__item--mc::before {
+  background: url('/Content/images/icon_Leaderboard_B.svg') no-repeat center bottom;
+}
+.header--menu__item--rank::before {
+  background: url('/Content/images/btn_ranking_B.svg') no-repeat center bottom;
+}
+.header--menu__item--chart::before {
+  background: url('/Content/images/btn_pieChart_B.svg') no-repeat center bottom;
+}
+.header--menu__item--background::before {
+  background: url('/Content/images/bg_brightColor_B.svg') no-repeat center bottom;
+}
+
+.header--menu__item--background--light::before {
+  background: url('/Content/images/bg_brightColor_Y.svg') no-repeat center bottom;
+}

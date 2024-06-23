@@ -1,0 +1,32 @@
+.table-item {
+  &__correct {
+    animation: flicker ease-in var(--time-check-result);
+
+    @keyframes flicker {
+      0% {
+        background-color: transparent;
+      }
+      10% {
+        background-color: #b3d8eb;
+      }
+      20% {
+        background-color: transparent;
+      }
+      30% {
+        background-color: #b3d8eb;
+      }
+      40% {
+        background-color: transparent;
+      }
+      50% {
+        background-color: #b3d8eb;
+      }
+      90% {
+        background-color: #b3d8eb;
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+  }
+}

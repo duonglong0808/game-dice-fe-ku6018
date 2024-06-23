@@ -1,0 +1,199 @@
+.iframe_container {
+  height: 100%;
+  width: 100%;
+  /* height: 720px; */
+  /* width: 1280.9px; */
+  // overflow: scroll;
+  border: none;
+  visibility: visible;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform-origin: 0px 100% 0px;
+  opacity: 1;
+  overflow: hidden !important;
+}
+
+.live_wrapper {
+  background-color: black;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // height: calc(75vh - 4px);
+  height: 100%;
+}
+
+.live_container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.live_action {
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  bottom: 0;
+  left: 0;
+  perspective: 3000px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  &__control {
+    // background-color: red;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &--left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      button {
+        padding: 4px 12px;
+        width: 70px;
+        background-color: #ccc;
+        border-radius: 5px;
+        &.btn-primary {
+          background-color: #434343;
+          font-size: 14px;
+          color: #959595;
+        }
+
+        &.active {
+          color: white;
+          background-color: #3678b7;
+        }
+      }
+
+      &__cuoc {
+        color: #ccc;
+      }
+      &__value {
+        color: yellow;
+      }
+    }
+    &--right {
+      display: flex;
+    }
+  }
+}
+.d3 {
+  margin: 1px auto;
+  margin-bottom: -48px;
+  width: 86%;
+  box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4509803922);
+  transition: all 0.5s;
+  transform: rotateX(50deg);
+  transform-style: flat;
+  display: flex;
+  height: 69%;
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    &__row {
+      &--1 {
+        border-width: 1.6px; // Độ dày của viền là 2px
+        border-color: #737b9a;
+        border-style: solid;
+        height: 90px;
+      }
+      &--2 {
+        border-width: 1.6px; // Độ dày của viền là 2px
+        border-color: #737b9a;
+        border-style: solid;
+        height: 135px;
+      }
+    }
+  }
+}
+
+// Messgae
+.message__box {
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 47%;
+  display: none;
+
+  &--jump {
+    display: block;
+    animation: message_jump 3s linear forwards;
+    -webkit-animation: message_jump 3s linear forwards;
+  }
+
+  &--body {
+    display: table;
+    padding: 0;
+    background-image: none;
+    margin: 0 auto;
+
+    &::after,
+    &::before {
+      background-image: url(/Content/images/bg_blackGradient_Y.png);
+      content: '';
+      width: 100%;
+      height: 2px;
+      display: block;
+      visibility: initial;
+      background-repeat: repeat-y;
+      background-position: center;
+      background-size: 100% auto;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+    }
+  }
+
+  &--text {
+    padding: 5px 100px;
+    display: table;
+    background-image: url(/Content/images/bg_blackGradient.png);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100%;
+    color: #ffd200;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+@keyframes message_jump {
+  0% {
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+  }
+  10% {
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  15% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
+  90% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
+  95% {
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+  }
+}

@@ -1,0 +1,181 @@
+.live_action__control {
+  // background-color: red;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &--left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    button {
+      padding: 4px 12px;
+      width: 70px;
+      background-color: #ccc;
+      border-radius: 5px;
+      &.btn-primary {
+        background-color: #434343;
+        font-size: 14px;
+        color: #959595;
+      }
+
+      &.active {
+        color: white;
+        background-color: #3678b7;
+      }
+    }
+
+    &__cuoc {
+      color: #ccc;
+    }
+    &__value {
+      color: yellow;
+    }
+  }
+  &--right {
+    display: flex;
+  }
+}
+
+.right__action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  gap: 10px;
+  &__phinh {
+    width: 30px;
+    height: 24px;
+  }
+  &__auto {
+    width: 30px;
+    height: 24px;
+  }
+}
+
+.right__action {
+  position: relative;
+  margin-right: 130px;
+}
+
+.right__action__auto,
+.right__action__phinh {
+  position: absolute;
+  background-image: url(/Content/images/vn/json/bettingButtons.png);
+  background-repeat: no-repeat;
+  background-position: -44px -339px;
+  width: 50px;
+  height: 31px;
+  background-size: 200%;
+  right: -43px;
+
+  &:hover {
+    background-position: 0px -101px;
+    background-size: 170%;
+  }
+}
+
+.right__action__auto {
+  background-position: 0px -380px;
+  right: -100px;
+
+  &:hover {
+    background-position: 0px -61px;
+    background-size: 170%;
+  }
+}
+
+.phing_wrapper {
+  position: absolute;
+  bottom: 150%;
+  display: flex;
+  width: 421px;
+  padding: 10px 0 5px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  right: -60px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.body__chips {
+  &--item {
+    width: 64px;
+    height: 54px;
+  }
+}
+
+.body__confirm {
+  width: 145px;
+  height: 215px;
+  border-left: 1px solid #2c3150;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  &--cancel {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-image: url(/Content/images/icon_depart.svg);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+  }
+
+  &--text {
+    display: table;
+    font-size: 16px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    margin-top: 63px;
+  }
+
+  &--icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(/Content/images/img_chipHint.svg);
+    background-size: 90% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block !important;
+    margin: 0 0 0 6px !important;
+    position: relative;
+    bottom: -4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &--btn {
+    width: 115px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #3678b7;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: table;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin-top: 17px;
+  }
+}
