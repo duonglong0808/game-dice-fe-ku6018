@@ -17,7 +17,7 @@ import { betDiceAndBaccarat } from '@/ultils/api';
 import { useHandleMessageBaccaratWsk } from '@/ultils/handleDetailBaccarat';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { TableItemBaccaratMobile } from '../TableItemBaccaratMobile';
 
@@ -64,10 +64,11 @@ export function BaccaratDetailViewMobile(): JSX.Element {
   const [totalPointBet, setTotalPointBet] = useState(0);
   const dataBetConfirmOld = useRef<{ point: number; answer: number }[]>([]);
   const [currentChip, setCurrentChip] = useState<number>();
-  const [optionBetActive, setOptionBetActive] = useState(1);
+  const [optionBetActive, setOptionBetActive] = useState(0);
   const onBetPosition = (positionAns: number) => {
     if (currentChip) {
       const sumBet = dataBetCurrent.reduce((pre, item) => pre + item.point, 0);
+      console.log('🚀 ~ onBetPosition ~ sumBet:', sumBet);
       if (sumBet < gamePoint)
         dispatch(
           updateDataBetBaccarat({
@@ -99,6 +100,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
             point: bet.point,
             answer: bet.answer,
             game: 'mc-baccarat',
+            type: typePlay,
           };
           const req = await betDiceAndBaccarat(data);
 
@@ -231,8 +233,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 <div className="flex-1 flex bg-[#f3f3f3] flex-wrap w-full h-full border-t-[1px] border-l-[1px] border-[#bcbcbc] rounded-sm">
                   <TableItemBaccaratMobile
                     className="basis-1/5 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 2)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_2') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={2}
                     ratio="Max 1:30"
@@ -246,8 +248,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="Con Đôi"
                     className="basis-1/5 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 1)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_1') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={1}
                     ratio="1:30"
@@ -257,8 +259,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="SUPER 6"
                     className="basis-1/5 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 6)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_6') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={6}
                     ratio="1:12 / 1:20"
@@ -268,8 +270,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="Cái Đôi"
                     className="basis-1/5 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 7)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_7') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={7}
                     ratio="1:30"
@@ -278,8 +280,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   />
                   <TableItemBaccaratMobile
                     className="basis-1/5 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 8)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_8') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={8}
                     ratio="Max 1:30"
@@ -297,8 +299,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="Con"
                     className="basis-1/3 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 5)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_5') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={5}
                     ratio="1:1"
@@ -309,8 +311,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="Hòa"
                     className="basis-1/3 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 3)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_3') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={3}
                     ratio="1:8"
@@ -321,8 +323,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   <TableItemBaccaratMobile
                     name="Cái"
                     className="basis-1/3 h-[49.5%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 4)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_4') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={4}
                     ratio={typePlay == 'old' ? '1:0.95' : '1:1'}
@@ -338,10 +340,10 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 <div className="flex-1 flex bg-[#f3f3f3] flex-wrap w-full h-full border-t-[1px] border-l-[1px] border-[#bcbcbc] rounded-sm">
                   <TableItemBaccaratMobile
                     className="basis-1/2 h-[50%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={dataBetConfirmOld.current.find((i) => i.answer == 9)?.point || 0}
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_9') || false}
                     onBetPosition={onBetPosition}
-                    positionAnswer={1}
+                    positionAnswer={9}
                     ratio="1:5"
                     textColor="text-[#666]"
                     name="Đôi bất kỳ"
@@ -349,33 +351,39 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   />
                   <TableItemBaccaratMobile
                     className="basis-1/2 h-[50%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={
+                      dataBetConfirmOld.current.find((i) => i.answer == 11)?.point || 0
+                    }
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_11') || false}
                     onBetPosition={onBetPosition}
-                    positionAnswer={1}
-                    ratio="1:5"
+                    positionAnswer={11}
+                    ratio="1:25"
                     textColor="text-[#666]"
                     name="Đôi hoàn mỹ"
                     statusBaccarat={statsBaccaratDetail}
                   />
                   <TableItemBaccaratMobile
                     className="basis-1/2 h-[50%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={
+                      dataBetConfirmOld.current.find((i) => i.answer == 10)?.point || 0
+                    }
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_10') || false}
                     onBetPosition={onBetPosition}
-                    positionAnswer={1}
-                    ratio="1:5"
+                    positionAnswer={10}
+                    ratio="1:4"
                     textColor="text-[#666]"
                     name="Con bài chuẩn"
                     statusBaccarat={statsBaccaratDetail}
                   />
                   <TableItemBaccaratMobile
                     className="basis-1/2 h-[50%]"
-                    betConfirmOld={0}
-                    isHighlight={false}
+                    betConfirmOld={
+                      dataBetConfirmOld.current.find((i) => i.answer == 12)?.point || 0
+                    }
+                    isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_12') || false}
                     onBetPosition={onBetPosition}
-                    positionAnswer={1}
-                    ratio="1:5"
+                    positionAnswer={12}
+                    ratio="1:4"
                     textColor="text-[#666]"
                     name="Cái bài chuẩn"
                     statusBaccarat={statsBaccaratDetail}
@@ -460,7 +468,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
             <div className="flex border-t-[1px] items-center justify-around h-[5svh] min- border-b-[1px] border-[#ccc] bg-[#f3f3f3] w-full mx-auto">
               <button
                 onClick={() => {
-                  () => {};
+                  dispatch(resetDataBetBaccarat());
                 }}
                 className={classNames(
                   'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_cancel.svg)] bg-no-repeat ml-2 pl-2 bg-[length:auto_65%]',
@@ -488,7 +496,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 Lặp lại
               </button>
               <button
-                onClick={() => {}}
+                onClick={handleConfirmBet}
                 className={classNames(
                   'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_confirm.svg)] bg-no-repeat bg-[#0f9e4f] shadow-[0_0_0_4px_#0f9e4f] ml-3 pl-2 bg-[length:auto_65%]',
                   {

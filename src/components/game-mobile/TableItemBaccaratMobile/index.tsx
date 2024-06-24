@@ -67,7 +67,7 @@ export function TableItemBaccaratMobile({
   className,
 }: TableItemProps): JSX.Element {
   // const [pointBetPosition, setPointBetPosition] = useState(0);
-  const { dataBetCurrent } = useAppSelector((state) => state.diceDetail);
+  const { dataBetCurrent } = useAppSelector((state) => state.baccaratDetail);
   const pointBetPosition =
     betConfirmOld + (dataBetCurrent.find((i) => i.answer == positionAnswer)?.point || 0);
 

@@ -89,13 +89,32 @@ export const useHandleMessageBaccaratWsk = () => {
             // Cai and cai long bao
             if (pointBanker > pointPlayer) {
               arrBetActive.push('p_4');
-              if (pointPlayer - pointBanker >= 4) {
+              if (pointBanker - pointPlayer >= 4) {
                 arrBetActive.push('p_8');
               }
             }
             // Super 6
             if (pointBanker == 6) {
               arrBetActive.push('p_6');
+            }
+            // Doi bat by
+            if (
+              valuePokerPlayer[0] == valuePokerPlayer[1] ||
+              valuePokerBanker[0] == valuePokerBanker[1]
+            ) {
+              arrBetActive.push('p_9');
+            }
+            //  Doi hoan my
+            if (pokerBanker[0] == pokerBanker[1] || pokerPlayer[0] == pokerPlayer[1]) {
+              arrBetActive.push('p_11');
+            }
+            // Con bai chuan
+            if (pokerPlayer.length == 2 && pointPlayer >= 8) {
+              arrBetActive.push('p_10');
+            }
+            // Cai bai chuan
+            if (pokerBanker.length == 2 && pointBanker >= 8) {
+              arrBetActive.push('p_12');
             }
 
             dispatch(
