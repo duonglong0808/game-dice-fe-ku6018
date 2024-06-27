@@ -4,8 +4,8 @@ export class BaseAxios {
   private request: AxiosInstance;
 
   constructor(urlBase?: string) {
-    // const accessToken = sessionStorage.getItem('access_token');
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = sessionStorage.getItem('access_token');
+    // const accessToken = localStorage.getItem('access_token');
     this.request = axios.create({
       baseURL: urlBase || process.env.API_URL,
       headers: {

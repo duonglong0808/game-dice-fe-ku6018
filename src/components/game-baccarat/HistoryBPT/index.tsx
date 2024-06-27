@@ -25,10 +25,25 @@ export function HistoryBPT({
   const [type, setType] = useState(initType);
   const dataRaw = useAppSelector((state) => state.baccaratDetail.dataBaccaratDetail);
   const lengthDataRowOld = useRef(0);
-  const dataSort = [...dataRaw.filter((i) => i.gameBaccaratId == baccaratId && i.pokerBanker)]
+  const diceByBaccaratId = dataRaw.filter((i) => i.gameBaccaratId == baccaratId);
+  // Bước 1: Tìm dateId mới nhất
+  const latestDateId = diceByBaccaratId.reduce(
+    (max, item) => (item.dateId > max ? item.dateId : max),
+    0
+  );
+  // Lấy phiên mới nhất
+  const maxTransaction = Math.max(
+    ...diceByBaccaratId.map((item) =>
+      item.dateId == latestDateId ? parseInt(item.mainTransaction.split('-')[0]) : 0
+    )
+  );
+  const dataSort = [
+    ...diceByBaccaratId.filter(
+      (i) => i.pokerBanker && +i.mainTransaction.split('-')[0] == maxTransaction
+    ),
+  ]
     .sort((a, b) => a.baccaratDetailId - b.baccaratDetailId)
     .slice(0, row * (col - 1));
-
   const [dataPosition, setDataPosition] = useState<any>({});
 
   useEffect(() => {

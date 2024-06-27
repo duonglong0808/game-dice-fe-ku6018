@@ -10,6 +10,7 @@ export interface BaccaratDetailDto {
   status: number | string;
   pointPlayer: number;
   pointBanker: number;
+  dateId: number;
   pokerBanker?: string[];
   pokerPlayer?: string[];
   arrBetActive: string[];

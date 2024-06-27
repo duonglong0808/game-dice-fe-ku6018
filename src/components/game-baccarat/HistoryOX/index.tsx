@@ -21,7 +21,23 @@ export function HistoryOX({
 }): JSX.Element {
   const dataRaw = useAppSelector((state) => state.baccaratDetail.dataBaccaratDetail);
   const lengthDataRowOld = useRef(0);
-  const dataSort = [...dataRaw.filter((i) => i.gameBaccaratId == baccaratId && i.pokerBanker)]
+  const diceByBaccaratId = dataRaw.filter((i) => i.gameBaccaratId == baccaratId);
+  // Bước 1: Tìm dateId mới nhất
+  const latestDateId = diceByBaccaratId.reduce(
+    (max, item) => (item.dateId > max ? item.dateId : max),
+    0
+  );
+  // Lấy phiên mới nhất
+  const maxTransaction = Math.max(
+    ...diceByBaccaratId.map((item) =>
+      item.dateId == latestDateId ? parseInt(item.mainTransaction.split('-')[0]) : 0
+    )
+  );
+  const dataSort = [
+    ...diceByBaccaratId.filter(
+      (i) => i.pokerBanker && +i.mainTransaction.split('-')[0] == maxTransaction
+    ),
+  ]
     .sort((a, b) => a.baccaratDetailId - b.baccaratDetailId)
     .slice(0, row * (col - 1));
 
@@ -59,29 +75,33 @@ export function HistoryOX({
             const isPlayerWin = item.pointPlayer > item.pointBanker;
 
             const lisTypeEquals: BaccaratDetailDto[] = [];
+
             const subArr = arrThis.slice(indexCurrent);
             for (let index = 0; index < subArr.length; index++) {
               const item2 = subArr[index];
-              const isBankerWin2 = item2.pointPlayer < item2.pointBanker;
-              if (isPlayerWin != isBankerWin2) {
+              const isBankerLost = item2.pointPlayer >= item2.pointBanker;
+              if (isPlayerWin == isBankerLost) {
                 lisTypeEquals.push(item2);
               } else {
                 break;
               }
             }
+            // baccaratId == 1 &&
+            //   lisTypeEquals.length == 5 &&
+            //   console.log('🚀 ~ dataSort.forEach ~ lisTypeEquals:', lisTypeEquals);
             if (lisTypeEquals.length >= 2) {
               if (lisTypeEquals.length > row) {
                 let colTg =
                   colCalc + (lisTypeEquals.length - row) > col
                     ? col
                     : colCalc + (lisTypeEquals.length - row);
-                baccaratId == 1 &&
-                  console.log(
-                    '🚀 ~ dataSort.forEach ~ colTg:',
-                    colCalc + (lisTypeEquals.length - row),
-                    '====',
-                    colTg
-                  );
+                // baccaratId == 1 &&
+                //   console.log(
+                //     '🚀 ~ dataSort.forEach ~ colTg:',
+                //     colCalc + (lisTypeEquals.length - row),
+                //     '====',
+                //     colTg
+                //   );
                 for (let i = 0; i < lisTypeEquals.length; i++) {
                   const element = lisTypeEquals[i];
                   indexCurrent++;
@@ -93,8 +113,8 @@ export function HistoryOX({
                   } else {
                     value = element.pointBanker == 6 ? 5 : 5;
                   }
-                  if (lisTypeEquals.length - i > rowCalc) {
-                    const position = `${colTg}${rowCalc}`;
+                  if (lisTypeEquals.length - i > row) {
+                    const position = `${colTg}${row}`;
                     dataPositionCalc[position] = { value };
                     colTg = colTg - 1;
                   } else {
