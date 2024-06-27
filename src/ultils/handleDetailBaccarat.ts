@@ -27,6 +27,7 @@ interface BaccaratWskDto {
   mainTransaction: string;
   status: number | string;
   pointPlayer: number;
+  dateId: number;
   pointBanker: number;
   pokerBanker: string[];
   pokerPlayer: string[];
