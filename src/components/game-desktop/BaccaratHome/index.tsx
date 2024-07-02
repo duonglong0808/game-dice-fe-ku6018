@@ -18,15 +18,13 @@ export function BaccaratHome(): JSX.Element {
         return (
           <div
             onClick={() =>
-              dispatch(
-                setGameBaccaratId({ id: index < 2 ? baccarat.id : data[index % 2 == 0 ? 0 : 1].id })
-              )
+              dispatch(setGameBaccaratId({ id: index < 3 ? baccarat.id : data[index % 3].id }))
             }
             key={index}>
             <BaccaratItem
               key={index}
               {...baccarat}
-              id={index < 2 ? baccarat.id : data[index % 2 == 0 ? 0 : 1].id}
+              id={index < 3 ? baccarat.id : data[index % 3].id}
             />
           </div>
         );

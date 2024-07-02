@@ -6,9 +6,12 @@ import { useState } from 'react';
 import { HeaderGameMobile } from '../../../components/game-mobile/Header';
 import { DiceHomeMobile } from '@/components/game-mobile/DiceHome';
 import { BaccaratHomeMobile } from '@/components/game-mobile/BaccaratHome';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function PageGame(): JSX.Element {
-  const [game, setGame] = useState('dice');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const game = searchParams.get('type') || 'dice';
 
   return (
     <div>
@@ -18,7 +21,7 @@ export default function PageGame(): JSX.Element {
         <ul className="fixed z-[2] bottom-0 top-[84px] w-[64px] px-1 border-r-[1px] border-[#333] bg-[#000] py-2">
           <li className="mb-1 w-full h-fit flex justify-center items-center">
             <button
-              onClick={() => setGame('dice')}
+              onClick={() => router.push('?type=dice')}
               className={classNames('p-1 w-full text-center rounded-lg border-[1px]', {
                 'border-[#8099ff] shadow-[0_0_3px_#9e865e,0_0_3px_#9e865e_inset]': game == 'dice',
                 'border-[transparent]': game != 'dice',
@@ -39,7 +42,7 @@ export default function PageGame(): JSX.Element {
           </li>
           <li className="mb-1 w-full h-fit flex justify-center items-center">
             <button
-              onClick={() => setGame('mc-baccarat')}
+              onClick={() => router.push('?type=mc-baccarat')}
               className={classNames('p-1 w-full text-center border-[1px]', {
                 'border-[#ffd100] rounded-md': game == 'mc-baccarat',
                 'border-[transparent]': game != 'mc-baccarat',

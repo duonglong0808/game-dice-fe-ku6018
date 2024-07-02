@@ -116,6 +116,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
           setMessage('Đã bắt đầu vui lòng đặt cược');
           break;
         case StatusDiceDetail.waitOpen:
+          dispatch(resetDataBetDice());
           setMessage('Chờ mở thưởng');
           break;
         case StatusDiceDetail.end:
@@ -131,7 +132,6 @@ export function DetailDiceDetailMobile(): JSX.Element {
             gamePointRef.current = gamePoint;
             dataBetConfirmOld.current = [];
             setTotalPointBet(0);
-            dispatch(resetDataBetDice());
           }
           break;
         default:

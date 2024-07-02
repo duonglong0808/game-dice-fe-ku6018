@@ -42,13 +42,9 @@ export function BaccaratHomeMobile(): JSX.Element {
           <div
             key={index}
             onClick={() => {
-              dispatch(
-                setGameBaccaratId({ id: index < 2 ? item.id : data[index % 2 == 0 ? 0 : 1].id })
-              );
+              dispatch(setGameBaccaratId({ id: index < 3 ? item.id : data[index % 3].id }));
               router.push(
-                `/mobile/game/${
-                  index < 2 ? item.id : data[index % 2 == 0 ? 0 : 1].id
-                }?game=mc-baccarat`
+                `/mobile/game/${index < 3 ? item.id : data[index % 3].id}?game=mc-baccarat`
               );
             }}
             className="w-full mb-1 rounded-sm border-[1px] border-[#484848] relative bg-gradient-to-b-[#2a2a2a_0%,#131313_100%]">
@@ -101,7 +97,7 @@ export function BaccaratHomeMobile(): JSX.Element {
               <div className="flex-1 flex ml-1">
                 <HistoryOX
                   isLive={false}
-                  baccaratId={index < 2 ? item.id : data[index % 2 == 0 ? 0 : 1].id}
+                  baccaratId={index < 3 ? item.id : data[index % 3].id}
                   col={15}
                   row={6}
                 />
