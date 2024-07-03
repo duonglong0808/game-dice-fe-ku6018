@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface UserCurrentSlice {
+interface UserCurrentSliceDto {
   userName: string;
   userId: string;
   name: string;
@@ -16,7 +16,7 @@ const userCurrentSlice = createSlice({
     name: '',
     gamePoint: 0,
     mainPoint: 0,
-  } as UserCurrentSlice,
+  } as UserCurrentSliceDto,
   reducers: {
     setDataUserLogin(state, action) {
       state.name = action.payload.name;

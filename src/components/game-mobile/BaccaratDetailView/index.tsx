@@ -154,6 +154,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           }
           break;
         default:
+          setMessage('');
           break;
       }
     }
