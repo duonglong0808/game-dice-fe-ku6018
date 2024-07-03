@@ -77,7 +77,7 @@ export function ControllerBaccarat(): JSX.Element {
           );
           if (totalBet != 0) {
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + totalBet)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             setTotalBet(0);

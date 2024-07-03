@@ -68,7 +68,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
   const onBetPosition = (positionAns: number) => {
     if (currentChip) {
       const sumBet = dataBetCurrent.reduce((pre, item) => pre + item.point, 0);
-      console.log('🚀 ~ onBetPosition ~ sumBet:', sumBet);
+      // console.log('🚀 ~ onBetPosition ~ sumBet:', sumBet);
       if (sumBet < gamePoint)
         dispatch(
           updateDataBetBaccarat({
@@ -110,6 +110,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           };
         })
       );
+      // console.log('🚀 ~ handleConfirmBet ~ reqBets:', reqBets);
 
       // const newDataBetConfirm = [...dataBetConfirmOld.current];
       let totalBetSuc = 0;
@@ -147,7 +148,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           );
           if (totalPointBet != 0) {
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + totalPointBet)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             setTotalPointBet(0);

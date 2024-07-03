@@ -51,12 +51,9 @@ export const useHandleMessageBaccaratWsk = () => {
         case TypeEmitMessage.updateStatusBaccarat:
           if (data.status == StatusBaccarat.check) {
             const { pokerBanker, pokerPlayer } = data;
-            const valuePokerPlayer: number[] = pokerPlayer?.map(
-              (pk) => pointPoker[pk.split('_')[1].slice(1)]
-            );
-            const valuePokerBanker: number[] = pokerBanker?.map(
-              (pk) => pointPoker[pk.split('_')[1].slice(1)]
-            );
+            const valuePokerPlayer: string[] = pokerPlayer?.map((pk) => pk.split('_')[1].slice(1));
+            const valuePokerBanker: string[] = pokerBanker?.map((pk) => pk.split('_')[1].slice(1));
+
             const pointPlayer =
               pokerPlayer.reduce(
                 (pre, player) => (pre += pointPoker[player.split('_')[1].slice(1)]),
@@ -85,6 +82,7 @@ export const useHandleMessageBaccaratWsk = () => {
             }
             // Cai doi
             if (valuePokerBanker[0] == valuePokerBanker[1]) {
+              console.log('🚀 ~ wsk.listeningEvent ~ valuePokerBanker:', valuePokerBanker);
               arrBetActive.push('p_7');
             }
             // Cai and cai long bao
@@ -95,7 +93,7 @@ export const useHandleMessageBaccaratWsk = () => {
               }
             }
             // Super 6
-            if (pointBanker == 6) {
+            if (pointBanker == 6 && pointBanker > pointPlayer) {
               arrBetActive.push('p_6');
             }
             // Doi bat by
