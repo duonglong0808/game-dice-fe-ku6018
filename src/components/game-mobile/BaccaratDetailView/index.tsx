@@ -252,7 +252,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                     isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_1') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={1}
-                    ratio="1:30"
+                    ratio="1:11"
                     textColor="text-[#666]"
                     statusBaccarat={statsBaccaratDetail}
                   />
@@ -274,7 +274,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                     isHighlight={dataBaccaratDetailById?.arrBetActive?.includes('p_7') || false}
                     onBetPosition={onBetPosition}
                     positionAnswer={7}
-                    ratio="1:30"
+                    ratio="1:11"
                     textColor="text-[#666]"
                     statusBaccarat={statsBaccaratDetail}
                   />
