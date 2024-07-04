@@ -127,7 +127,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
             //   gamePointRef.current
             // );
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + totalPointBet)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             dataBetConfirmOld.current = [];

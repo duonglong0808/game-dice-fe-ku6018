@@ -92,7 +92,7 @@ export default function LiveStream({ src, gameDiceId }: { src: string; gameDiceI
           if (totalPointBet != 0) {
             // console.log('🚀 ~ useEffect ~ gamePoint - gamePointRef.current:');
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + totalPointBet)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             setTotalBet(0);
