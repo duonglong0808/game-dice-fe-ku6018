@@ -11,7 +11,7 @@ import { ShowMessageLive } from '@/components/game/ShowMessageLive';
 import { StatusBaccarat, dataListChipsStatistics } from '@/constants';
 import { useAppDispatch, useAppSelector } from '@/lib';
 import { resetDataBetBaccarat, updateDataBetBaccarat } from '@/lib/redux/app/baccaratDetail.slice';
-import { updatePointUser } from '@/lib/redux/app/userCurrent.slice';
+import { resetPointBetMain, updatePointUser } from '@/lib/redux/app/userCurrent.slice';
 import { setIndexChipsRedux } from '@/lib/redux/system/settingSys';
 import { betDiceAndBaccarat } from '@/ultils/api';
 import { useHandleMessageBaccaratWsk } from '@/ultils/handleDetailBaccarat';
@@ -57,7 +57,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
   const dispatch = useAppDispatch();
 
   // Point user
-  const { gamePoint } = useAppSelector((state) => state.userCurrent);
+  const { gamePoint, pointBetMain } = useAppSelector((state) => state.userCurrent);
   const gamePointRef = useRef(gamePoint);
 
   // Bet
@@ -141,17 +141,19 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           setMessage('Đã kết thúc đặt cược, vui lòng chờ mở bài');
           break;
         case StatusBaccarat.end:
-          console.log(
-            '🚀 ~ LiveStream ~ gamePoint - gamePointRef.current:',
-            gamePoint,
-            gamePointRef.current
-          );
+          // console.log(
+          //   '🚀 ~ LiveStream ~ gamePoint - gamePointRef.current:',
+          //   gamePoint,
+          //   gamePointRef.current
+          // );
           if (totalPointBet != 0) {
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + pointBetMain)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
+            dataBetConfirmOld.current = [];
             setTotalPointBet(0);
+            dispatch(resetPointBetMain());
           }
           break;
         default:

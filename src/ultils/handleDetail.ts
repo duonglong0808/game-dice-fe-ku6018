@@ -68,6 +68,7 @@ export const useHandleMessageDiceWsk = () => {
               dispatch(
                 updatePointUser({
                   gamePoint: data.points,
+                  pointBetMain: data.pointBetMain,
                 })
               );
               break;

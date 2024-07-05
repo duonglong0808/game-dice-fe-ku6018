@@ -14,7 +14,7 @@ import { DiceResultTXLive } from '@/components/game/DiceResultTXLive';
 import { ShowMessageLive } from '@/components/game/ShowMessageLive';
 import CountDownBet from '@/components/game/CountDown';
 import { ShowResultDice } from '@/components/game/ShowResultDice';
-import { updatePointUser } from '@/lib/redux/app/userCurrent.slice';
+import { resetPointBetMain, updatePointUser } from '@/lib/redux/app/userCurrent.slice';
 import { setIndexChipsRedux } from '@/lib/redux/system/settingSys';
 import { useHandleMessageDiceWsk } from '@/ultils/handleDetail';
 import { betDiceAndBaccarat } from '@/ultils/api';
@@ -26,7 +26,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
   const wsk = useHandleMessageDiceWsk();
 
   // Point user
-  const { gamePoint } = useAppSelector((state) => state.userCurrent);
+  const { gamePoint, pointBetMain } = useAppSelector((state) => state.userCurrent);
   const gamePointRef = useRef(gamePoint);
 
   // Bet
@@ -127,11 +127,12 @@ export function DetailDiceDetailMobile(): JSX.Element {
             //   gamePointRef.current
             // );
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + pointBetMain)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             dataBetConfirmOld.current = [];
             setTotalPointBet(0);
+            dispatch(resetPointBetMain());
           }
           break;
         default:
@@ -143,7 +144,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
 
   const onBetPosition = (positionAns: number) => {
     if (currentChip) {
-      const sumBet = dataBetCurrent.reduce((pre, item) => pre + item.point, 0);
+      const sumBet = dataBetCurrent.reduce((pre: number, item) => pre + item.point, 0);
       if (sumBet < gamePoint)
         dispatch(
           updateDataBetDice({

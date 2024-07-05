@@ -9,6 +9,7 @@ import CountDownBetBaccarat from '@/components/game/CountDownBaccarat';
 import { StatusBaccarat } from '@/constants';
 import { ResultGameBaccarat } from '@/components/game-baccarat/ResultGameBaccarat';
 import { resetDataBetBaccarat, updateDataBetBaccarat } from '@/lib/redux/app/baccaratDetail.slice';
+import { resetPointBetMain } from '@/lib/redux/app/userCurrent.slice';
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +56,7 @@ export function ControllerBaccarat(): JSX.Element {
   const dispatch = useAppDispatch();
   const [message, setMessage] = useState('');
   const messageRef = useRef<HTMLDivElement>(null);
-  const { gamePoint } = useAppSelector((state) => state.userCurrent);
+  const { gamePoint, pointBetMain } = useAppSelector((state) => state.userCurrent);
   const gamePointRef = useRef(gamePoint);
   useEffect(() => {
     if (statsBaccaratDetail != statsBaccaratDetailRef.current) {
@@ -77,10 +78,11 @@ export function ControllerBaccarat(): JSX.Element {
           );
           if (totalBet != 0) {
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + pointBetMain)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             setTotalBet(0);
+            dispatch(resetPointBetMain());
           }
           break;
         default:

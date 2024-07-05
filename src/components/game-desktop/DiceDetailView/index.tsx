@@ -87,6 +87,7 @@ export default function XocDiaDetailsView({ gameDiceId }: Props) {
               dispatch(
                 updatePointUser({
                   gamePoint: data.points,
+                  pointBetMain: data.pointBetMain,
                 })
               );
               break;

@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from '@/lib';
 import TableItem from '../TableItem';
 import ToolTipGame from '../ToolTip';
 import { resetDataBetDice, updateDataBetDice } from '@/lib/redux/app/diceDetail.slice';
-import { updatePointUser } from '@/lib/redux/app/userCurrent.slice';
+import { resetPointBetMain, updatePointUser } from '@/lib/redux/app/userCurrent.slice';
 import { ShowResultDice } from '@/components/game/ShowResultDice';
 import CountDownBet from '@/components/game/CountDown';
 import { SelectChipsAndChosesChip } from '../SelectChipsAndChosesChip';
@@ -19,7 +19,7 @@ import { SelectChipsAndChosesChip } from '../SelectChipsAndChosesChip';
 const cx = classNames.bind(styles);
 
 export default function LiveStream({ src, gameDiceId }: { src: string; gameDiceId: number }) {
-  const { gamePoint } = useAppSelector((state) => state.userCurrent);
+  const { gamePoint, pointBetMain } = useAppSelector((state) => state.userCurrent);
   const gamePointRef = useRef(gamePoint);
   const dispatch = useAppDispatch();
   const [dataBetConfirmOld, setDataBetConfirmOld] = useState<{ point: number; answer: number }[]>(
@@ -92,10 +92,11 @@ export default function LiveStream({ src, gameDiceId }: { src: string; gameDiceI
           if (totalPointBet != 0) {
             // console.log('🚀 ~ useEffect ~ gamePoint - gamePointRef.current:');
             if (gamePoint > gamePointRef.current)
-              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current)}`));
+              setMessage(String(`+${Math.ceil(gamePoint - gamePointRef.current + pointBetMain)}`));
             else setMessage(String(gamePoint - gamePointRef.current));
             gamePointRef.current = gamePoint;
             setTotalBet(0);
+            dispatch(resetPointBetMain());
           }
           break;
         default:

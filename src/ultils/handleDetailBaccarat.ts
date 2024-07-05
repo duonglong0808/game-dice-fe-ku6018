@@ -32,6 +32,7 @@ interface BaccaratWskDto {
   pokerBanker: string[];
   pokerPlayer: string[];
   arrBetActive: string[];
+  pointBetMain?: number;
 }
 
 export const useHandleMessageBaccaratWsk = () => {
@@ -157,6 +158,7 @@ export const useHandleMessageBaccaratWsk = () => {
               dispatch(
                 updatePointUser({
                   gamePoint: data.points,
+                  pointBetMain: data.pointBetMain,
                 })
               );
               break;
