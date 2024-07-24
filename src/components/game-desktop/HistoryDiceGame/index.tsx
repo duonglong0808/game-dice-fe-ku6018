@@ -16,7 +16,7 @@ export function HistoryDiceGame({ gameDiceId }: { gameDiceId: number }): JSX.Ele
     <div className={cx('wrapper')}>
       <table className={cx('wrapper-table')}>
         <tbody className={cx('wrapper-table__tbody')}>
-          <tr>
+          <tr style={{ borderTop: '0' }}>
             <th className={cx('CD_w50')}>
               <span className={cx('CD_nameGray')}>Bàn</span>
               <span className={cx('CD_nameBlue')}>A</span>
@@ -48,7 +48,7 @@ export function HistoryDiceGame({ gameDiceId }: { gameDiceId: number }): JSX.Ele
             </td>
           </tr>
 
-          <tr className={cx('CD_Player', 'CD_Tdown')}>
+          <tr className={cx('CD_Player', 'CD_Tdzown')}>
             <td>
               <div className={cx('CD_White_ball')}>0</div>
               <span className={cx('CD_Num', 'SD_CD_Num')}>50</span>

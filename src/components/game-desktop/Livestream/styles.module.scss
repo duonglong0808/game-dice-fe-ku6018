@@ -33,17 +33,17 @@
 .live_action {
   position: absolute;
   width: 100%;
-  height: 380px;
+  height: 306px;
   bottom: 0;
   left: 0;
-  perspective: 3000px;
-
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  perspective-origin: top;
+  perspective: 1300px;
+
   &__control {
     // background-color: red;
-    height: 60px;
+    height: 100px;
     // padding: 5px;
     display: flex;
     flex-direction: row;
@@ -53,11 +53,12 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      margin-left: 16px;
       button {
-        padding: 4px 12px;
+        padding: 2px 8px;
         width: 70px;
         background-color: #ccc;
-        border-radius: 5px;
+        border-radius: 2px;
         &.btn-primary {
           background-color: #434343;
           font-size: 14px;
@@ -82,33 +83,35 @@
     }
   }
 }
+
 .d3 {
   margin: 1px auto;
   margin-bottom: -48px;
-  width: 86%;
+  width: 83%;
   box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1.99px solid #737b9a;
+  border: 2px solid #9da0ab7a;
   transition: all 0.5s;
-  transform: rotateX(50deg);
+  transform: rotateX(43deg);
   transform-style: flat;
   display: flex;
-  height: 69%;
+  height: 67%;
 
   &__col {
     display: flex;
     flex-direction: column;
     width: 100%;
     flex-grow: 1;
+    height: 100%;
     &__row {
       &--1 {
-        border-width: 1.99px; // Độ dày của viền là 2px
-        border-color: #737b9a;
+        border-width: 2px; // Độ dày của viền là 2px
+        border-color: #9da0ab7a;
         border-style: solid;
-        height: 90px;
+        height: 33.3333333334%;
       }
       &--2 {
-        border-width: 1.99px; // Độ dày của viền là 2px
-        border-color: #737b9a;
+        border-width: 2px; // Độ dày của viền là 2px
+        border-color: #9da0ab7a;
         border-style: solid;
         height: 135px;
       }

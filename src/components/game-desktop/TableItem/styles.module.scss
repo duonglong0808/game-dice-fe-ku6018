@@ -1,18 +1,18 @@
 .dots {
   display: flex;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
 
   &__item {
     background: url('/Content/images/img_PlateW.png') no-repeat;
     background-size: cover;
-    width: 24px;
-    height: 24px;
+    width: 27px;
+    height: 27px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 18px;
     color: #000;
   }
   &__item--red {
@@ -23,8 +23,8 @@
   }
 
   &__item--multi {
-    width: 14px;
-    height: 14px;
+    width: 19px;
+    height: 19px;
   }
 }
 
@@ -32,11 +32,10 @@
   position: relative;
   top: 0px;
   left: 0px;
-  // padding: 10px;
+  padding-top: 4px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding-top: 15px;
+  gap: 0px;
   align-items: center;
   color: #fff;
   flex-shrink: 1;

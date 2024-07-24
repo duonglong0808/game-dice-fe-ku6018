@@ -116,7 +116,7 @@ export default function XocDiaDetailsView({ gameDiceId }: Props) {
         <LiveStream src="https:live.vk169.net/hls/test1.m3u8" gameDiceId={gameDiceId} />
       </div>
       <div className={cx('result__list', 'flex')}>
-        <HistoryDiceGameDetail gameDiceId={gameDiceId} />
+        <HistoryDiceGameDetail gameDiceId={gameDiceId} initCol={7} />
         <HistoryDiceGame gameDiceId={gameDiceId} />
         <EvenOddResultLive gameDiceId={gameDiceId} />
         <DiceResultTXLive gameDiceId={gameDiceId} />

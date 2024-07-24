@@ -3,7 +3,7 @@
 
 .wrapper-table {
   background-color: #2a2a2a;
-  border-right: 1px solid var(--background-cell-table-border);
+  border: 1px solid var(--background-cell-table-border);
   table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
@@ -23,14 +23,18 @@
   & td,
   & th {
     background-color: var(--background-dice-history);
-    border-top: 1px solid var(--background-cell-table-border);
     font-weight: normal;
     vertical-align: middle;
     height: 28px;
+    border-top: 1px solid var(--background-cell-table-border);
+  }
+
+  .CD_Player {
   }
 
   & tr th:first-child {
     padding: 0;
+    border: 0;
   }
 
   .CD_w50 {
