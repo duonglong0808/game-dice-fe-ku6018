@@ -22,12 +22,13 @@ export default function GameLayout({ children }: Props) {
         style={{
           position: 'relative',
           width: '1650px',
-          maxWidth: '100%',
+
+          maxWidth: '100svw',
           // top: 0,
           // left: 0,
           // right: 0,
           margin: '0 auto',
-          paddingTop: '57.4858757%',
+          height: '100svh',
           overflow: 'hidden',
           minWidth: '1469px',
         }}>

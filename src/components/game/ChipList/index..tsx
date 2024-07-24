@@ -93,8 +93,8 @@ export default function ChipsList({
             )}>
             <Image
               alt="chip"
-              width={50}
-              height={50}
+              width={64}
+              height={64}
               src={
                 alwayActive ||
                 (game == 'dice'

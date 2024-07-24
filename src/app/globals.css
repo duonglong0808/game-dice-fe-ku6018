@@ -7,16 +7,16 @@
 @import 'tailwindcss/utilities'; */
 
 @media (prefers-color-scheme: light) {
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --text-primary: #0f679a;
-  --background-color-1: #e0ebf982;
-  --background-color-2: #91caea;
-  --time-check-result: 5s;
-  --background-cell-table: #fff 
-}
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --text-primary: #0f679a;
+    --background-color-1: #e0ebf982;
+    --background-color-2: #91caea;
+    --time-check-result: 5s;
+    --background-cell-table: #fff
+  }
 }
 
 :root {
@@ -62,7 +62,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: Arial, Microsoft JhengHei, Helvetica, sans-serif;
+  font-family: ReviseText, Arial;
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   margin: 0;
 }

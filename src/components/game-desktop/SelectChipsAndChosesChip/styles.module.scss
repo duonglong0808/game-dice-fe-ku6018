@@ -66,25 +66,27 @@
   position: absolute;
   background-image: url(/Content/images/vn/json/bettingButtons.png);
   background-repeat: no-repeat;
-  background-position: -44px -339px;
+  background-position: -47px -345px;
   width: 50px;
   height: 31px;
-  background-size: 200%;
+  background-size: 203%;
   right: -43px;
 
   &:hover {
-    background-position: 0px -101px;
-    background-size: 170%;
+    background-position: -2px -107px;
+    background-size: 180%;
+    height: 36px;
   }
 }
 
 .right__action__auto {
-  background-position: 0px -380px;
+  background-position: 0px -386px;
   right: -100px;
 
   &:hover {
-    background-position: 0px -61px;
-    background-size: 170%;
+    background-position: -2px -65px;
+    background-size: 180%;
+    height: 36px;
   }
 }
 

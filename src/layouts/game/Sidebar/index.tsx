@@ -80,7 +80,7 @@ export function SliderBarGame(): JSX.Element {
       <ul className={cx('list-game')}>
         <li
           onClick={() => handleClickGame('')}
-          className={cx('item-game', { 'item-game-xd__active': !game })}>
+          className={cx('item-game', 'item-game-xd', { 'item-game-xd__active': !game })}>
           Xóc đĩa
         </li>
         <li
@@ -107,19 +107,19 @@ export function SliderBarGame(): JSX.Element {
           Rồng hổ
         </li>
         <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
-          Trác Kim Hoa
+          Andar Bahar
         </li>
         <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
           Roulette
         </li>
-        <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
+        {/* <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
           Blockchain Ba Tây
-        </li>
+        </li> */}
         <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
           Ngầu Hầm
         </li>
         <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
-          Blockchain Pokdeng
+          Khác
         </li>
         <li onClick={() => handleClickGame('other')} className={cx('item-game')}>
           Nhiều bản

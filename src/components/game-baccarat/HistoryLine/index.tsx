@@ -38,7 +38,7 @@ export function HistoryLineBaccarat({
       <table className={cx('CD_dataInput w-full')} cellSpacing={0} cellPadding={0}>
         <tbody className={cx('table__body')}>
           {Array.from({ length: row }, (v, k) => k + 1).map((rowIndex) => (
-            <tr key={rowIndex} className={cx('table__tr')}>
+            <tr key={`${rowIndex}${new Date().getTime()}`} className={cx('table__tr')}>
               {Array.from({ length: col }, (v, k) => k + 1).map((colIndex) => (
                 <td
                   key={`${rowIndex}${colIndex}${new Date().getTime()}`}

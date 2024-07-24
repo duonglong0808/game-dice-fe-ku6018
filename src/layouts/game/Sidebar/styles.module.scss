@@ -117,6 +117,7 @@
 }
 
 .balance-gift__title {
+  width: 14px;
   margin-right: 8px;
   width: 'auto';
   height: 'auto';
@@ -228,31 +229,31 @@
 
 .item-game {
   display: block;
-  width: 100px;
   height: 38px;
   text-align: center;
   background-color: #1e1e1e;
   border: 1px solid #2d2d2d;
-  margin: 0 auto;
+  margin: 0 7px;
   margin-top: 10px;
   border-radius: 3px;
   cursor: pointer;
   color: #b0c9ff;
   position: relative;
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+}
+
+.item-game-xd {
+  font-size: 13px;
+  color: #b0c9ff;
 }
 
 .item-game-xd__active {
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(0, 212, 255, 1) 0%,
-    rgba(80, 110, 230, 1) 100%
-  );
+  background-image: url(/Content/images/btn_CDnav.png);
   position: relative;
   color: #fff;
   border: 1px solid #333;
@@ -275,4 +276,5 @@
 
 .item-game__blockchainBacca {
   color: #49e5d6;
+  font-size: 12px;
 }

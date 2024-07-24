@@ -43,8 +43,8 @@
   gap: 0px;
   &__control {
     // background-color: red;
-    height: 50px;
-    padding: 5px;
+    height: 60px;
+    // padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -87,7 +87,7 @@
   margin-bottom: -48px;
   width: 86%;
   box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.4509803922);
+  border: 1.99px solid #737b9a;
   transition: all 0.5s;
   transform: rotateX(50deg);
   transform-style: flat;
@@ -101,13 +101,13 @@
     flex-grow: 1;
     &__row {
       &--1 {
-        border-width: 1.6px; // Độ dày của viền là 2px
+        border-width: 1.99px; // Độ dày của viền là 2px
         border-color: #737b9a;
         border-style: solid;
         height: 90px;
       }
       &--2 {
-        border-width: 1.6px; // Độ dày của viền là 2px
+        border-width: 1.99px; // Độ dày của viền là 2px
         border-color: #737b9a;
         border-style: solid;
         height: 135px;
