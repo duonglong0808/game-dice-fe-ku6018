@@ -154,7 +154,8 @@ export default function LiveStream({ src, gameDiceId }: { src: string; gameDiceI
         _ngcontent-qpb-c33=""
         width="100%"
         height="855"
-        src={diceGameById?.idLive}
+        src={'https://tkuwebxdl101.vnskuvideo.com/kugame/web/index.html?id=71101'}
+        // src={diceGameById?.idLive}
         className={cx('iframe_container')}
         ref={iframeRef}></iframe>
       {/* <video className={cx('live_container')} id="video" ref={videoRef} autoFocus></video> */}

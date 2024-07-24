@@ -1,5 +1,5 @@
 .wrapper {
-  // height: 100%;
+  height: 169px;
   position: relative;
   // flex: 1;
 }
@@ -34,7 +34,6 @@
   position: relative;
   padding: 5px;
   height: 100%;
-  overflow: hidden;
   background-color: #fff;
   border: 1px solid #fff;
   font: inherit;
@@ -155,6 +154,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
+  background-color: #777;
+  outline: none;
 }
 
 .sendBtn {
@@ -190,9 +191,33 @@
   }
 }
 
-.sendBtn .btn_sendChat.no-saving::after {
-  opacity: 0.3;
-}
 .sendBtn .btn_sendChat.no-text::after {
   cursor: auto;
+}
+
+.scrollToBottom {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #3f99e9;
+  cursor: pointer;
+  z-index: 9;
+  opacity: 0.9;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+    border-top: 2.5px solid #fff;
+    border-right: 2.5px solid #fff;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
 }
