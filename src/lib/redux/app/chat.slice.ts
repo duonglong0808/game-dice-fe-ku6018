@@ -62,7 +62,14 @@ const chatGameSlice = createSlice({
         payload: DataSendMessage;
       }
     ) => {
-      state.chatGame = [...state.chatGame, actions.payload];
+      const date = new Date();
+      state.chatGame = [
+        ...state.chatGame,
+        {
+          ...actions.payload,
+          timeSend: `${date.getHours()}:${date.getMinutes()}`,
+        },
+      ];
     },
   },
 });

@@ -17,6 +17,7 @@ interface TableItemProps extends HTMLAttributes<HTMLDivElement> {
   onBetPosition: (position: number) => void;
   onBetSuccess: () => void;
   onHover?: (iCheckHover: ICheckHover) => void;
+  reversePoint?: boolean;
   points?: number;
   name?: string;
   numberPlayer?: number;
@@ -72,6 +73,7 @@ const TableItem = forwardRef<HTMLDivElement, TableItemProps>(
       curChip,
       onBetSuccess,
       positionAnswer,
+      reversePoint,
       ...otherProps
     },
     ref
@@ -164,20 +166,34 @@ const TableItem = forwardRef<HTMLDivElement, TableItemProps>(
         {...otherProps}>
         {name === undefined && points !== undefined ? (
           <div className={cx('dots')}>
-            {points !== -1 ? (
+            {points !== -1 && !reversePoint ? (
               Array.from({ length: 4 }, (_, index) => index + 1).map((n) => (
-                <span key={n} className={cx(`dots__item${n > 4 - points ? '--red' : ''}`)}>
+                <span
+                  key={n}
+                  className={cx({
+                    [`dots__item${n > 4 - points ? '--red' : ''}`]: !reversePoint,
+                  })}>
+                  {n == 4 && points}
+                </span>
+              ))
+            ) : reversePoint ? (
+              Array.from({ length: 4 }, (_, index) => index + 1).map((n) => (
+                <span
+                  key={n}
+                  className={cx({
+                    [`dots__item${n < 4 ? '--red' : ''}`]: reversePoint,
+                  })}>
                   {n == 4 && points}
                 </span>
               ))
             ) : (
-              <div className="flex  gap-2 flex-row">
-                <div className="flex gap-1">
+              <div className="flex  gap-1 flex-row">
+                <div className="flex">
                   {Array.from({ length: 4 }, (_, index) => index + 1).map((n) => (
                     <span key={n} className={cx('dots__item', 'dots__item--multi')} />
                   ))}
                 </div>
-                <div className="flex gap-1">
+                <div className="flex">
                   {Array.from({ length: 4 }, (_, index) => index + 1).map((n) => (
                     <span key={n} className={cx('dots__item--red', 'dots__item--multi')} />
                   ))}
@@ -188,7 +204,10 @@ const TableItem = forwardRef<HTMLDivElement, TableItemProps>(
         ) : (
           <p className={cx('table__item__name')}>{name}</p>
         )}
-        <div className={cx('table__item__ratio')}>
+        <div
+          className={cx('table__item__ratio', {
+            'table__item__ratio-name': name,
+          })}>
           1<span>:</span>
           {ratio}
         </div>
