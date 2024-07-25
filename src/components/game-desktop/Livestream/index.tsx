@@ -167,7 +167,7 @@ export default function LiveStream({ src, gameDiceId }: { src: string; gameDiceI
           right: 0,
           bottom: 0,
         }}></div>
-      {totalRed != undefined && <ShowResultDice totalRed={totalRed} />}
+      {totalRed && <ShowResultDice totalRed={totalRed} />}
       <CountDownBet
         setTotalPointBet={setTotalBet}
         setDataBetConfirmOld={setDataBetConfirmOld}
