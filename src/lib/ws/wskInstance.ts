@@ -35,7 +35,9 @@ class WebSocketSingleton {
   private async connect(): Promise<void> {
     const url: string = process.env.API_URL_WSK || '';
     // console.log('🚀 ~ WebSocketSingleton ~ url: ', url);
-    const access_token = sessionStorage.getItem(ACCESS_TOKEN) || '';
+    const access_token =
+      sessionStorage.getItem(ACCESS_TOKEN) ||
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJNSVVNSVUiLCJlbWFpbCI6bnVsbCwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNzE5MTE0OTQyLCJleHAiOjE3NTE1MTQ5NDJ9.i0AJ186glDPoGvJJ2xjis1jx0Z8Ngzf4wQqxUeOVk9A';
     // const access_token = localStorage.getItem(ACCESS_TOKEN) || '';
     this.socket = io(url, {
       // transports: ['websocket'],

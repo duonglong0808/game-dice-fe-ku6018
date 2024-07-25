@@ -18,7 +18,7 @@ export default function Main({ children }: Props) {
         className="w-full flex-1 overflow-hidden"
         style={{
           background: '#333',
-          marginTop: '-29px',
+          marginTop: '-16px',
         }}>
         {children}
       </div>

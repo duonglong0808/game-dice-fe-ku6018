@@ -60,6 +60,11 @@
   src: url('/font/microsoft_jhenghei.ttf');
 }
 
+html {
+
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   font-family: ReviseText, Arial;

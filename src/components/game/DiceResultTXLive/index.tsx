@@ -353,9 +353,9 @@ export function DiceResultTXLive({
             <tr>
               <td>
                 <div className={cx('CD_dataInput_CT--box')}>
-                  <span className={cx('red_t')}>Lẻ</span>
+                  <span className={cx('red_t')}>Tài</span>
                   <span className={cx('gray_t2')}>{` / `}</span>
-                  <span className={cx('blue_t3')}>Chẵn</span>
+                  <span className={cx('blue_t3')}>Xỉu</span>
                   <span className={cx('gray_t2')}>{` / `}</span>
                   <span className={cx('green_t')}>2 Trắng 2 Đỏ</span>
                 </div>

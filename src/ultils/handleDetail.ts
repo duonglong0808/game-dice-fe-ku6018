@@ -1,5 +1,6 @@
 import { EventSocket, StatusDiceDetail, TypeEmitMessage, TypeUpdatePointUser } from '@/constants';
 import { useAppDispatch } from '@/lib';
+import { addMessageGame } from '@/lib/redux/app/chat.slice';
 import {
   updateListDataDiceCurrent,
   updateListDataDiceDetail,
@@ -79,6 +80,10 @@ export const useHandleMessageDiceWsk = () => {
             default:
               break;
           }
+          break;
+        case TypeEmitMessage.newMessage:
+          // console.log('🚀 ~ wsk.listeningEvent ~ data:11111111111', data);
+          dispatch(addMessageGame(data));
           break;
         default:
           break;

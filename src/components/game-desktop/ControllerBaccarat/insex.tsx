@@ -125,7 +125,7 @@ export function ControllerBaccarat(): JSX.Element {
       <ResultGameBaccarat />
       <div
         className={cx(
-          'bg-[url(/Content/images/vn/json/desktopBJ.png)] absolute left-0 right-0 bottom-[130px] bg-no-repeat z-[1] overflow-hidden ',
+          'bg-[url(/Content/images/vn/json/desktopBJ.png)] absolute left-0 right-0 bottom-[111px] bg-no-repeat z-[1] overflow-hidden ',
           {
             'bg-[49px_0px] bg-[length:94%] h-[22%]': typePlay == 'old',
             'bg-[49px_-181px] bg-[length:94%] h-[22%]': typePlay == 'all',
@@ -211,7 +211,7 @@ export function ControllerBaccarat(): JSX.Element {
       </div>
       <div
         className={cx(
-          'absolute left-2 right-2 bottom-[110px] z-[6] flex justify-between items-center'
+          'absolute left-2 right-2 bottom-[80px] z-[6] flex justify-between items-center'
         )}>
         <div className="flex">
           <button

@@ -27,16 +27,16 @@ const mockMessages = [
 
 const mockData: DataSendMessage[] = [];
 
-for (let i = 0; i < 100; i++) {
-  const mockMessage: DataSendMessage = {
-    group: Math.random() > 0.5 ? 'dice' : 'baccarat',
-    content: mockMessages[Math.floor(Math.random() * mockMessages.length)],
-    sender: mockNames[Math.floor(Math.random() * mockNames.length)],
-    timeSend: '11:11',
-  };
+// for (let i = 0; i < 100; i++) {
+//   const mockMessage: DataSendMessage = {
+//     group: Math.random() > 0.5 ? 'dice' : 'baccarat',
+//     content: mockMessages[Math.floor(Math.random() * mockMessages.length)],
+//     sender: mockNames[Math.floor(Math.random() * mockNames.length)],
+//     timeSend: '11:11',
+//   };
 
-  mockData.push(mockMessage);
-}
+//   mockData.push(mockMessage);
+// }
 
 export interface DataSendMessage {
   group: string;

@@ -12,6 +12,7 @@ import {
   updateOrAddDataBaccaratDetail,
   updateOrAddDataBaccaratDetailCurrent,
 } from '@/lib/redux/app/baccaratDetail.slice';
+import { addMessageGame } from '@/lib/redux/app/chat.slice';
 import { updatePointUser } from '@/lib/redux/app/userCurrent.slice';
 import WebSocketSingleton from '@/lib/ws/wskInstance';
 import { useEffect } from 'react';
@@ -46,7 +47,7 @@ export const useHandleMessageBaccaratWsk = () => {
     wsk.joinRoom();
 
     wsk.listeningEvent(EventSocket.Data, (data: BaccaratWskDto) => {
-      console.log('🚀 ~ wsk.listeningEvent ~ data:', data);
+      // console.log('🚀 ~ wsk.listeningEvent ~ data:', data);
       const type = data?.typeEmit;
       switch (type) {
         case TypeEmitMessage.updateStatusBaccarat:
@@ -169,6 +170,10 @@ export const useHandleMessageBaccaratWsk = () => {
             default:
               break;
           }
+          break;
+        case TypeEmitMessage.newMessage:
+          // console.log('🚀 ~ wsk.listeningEvent ~ data:11111111111', data);
+          dispatch(addMessageGame(data as any));
           break;
         default:
           break;

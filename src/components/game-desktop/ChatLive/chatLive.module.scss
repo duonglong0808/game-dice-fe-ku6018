@@ -197,8 +197,8 @@
 
 .scrollToBottom {
   position: absolute;
-  right: 3px;
-  bottom: 3px;
+  right: 24px;
+  bottom: 39px;
   display: block;
   width: 30px;
   height: 30px;
@@ -219,5 +219,18 @@
     border-right: 2.5px solid #fff;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+  }
+}
+
+.chat-item {
+  animation: fakeIn linear 0.5s;
+}
+
+@keyframes fakeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

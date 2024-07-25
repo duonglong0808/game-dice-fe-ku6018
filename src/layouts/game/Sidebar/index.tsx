@@ -21,7 +21,7 @@ export function SliderBarGame(): JSX.Element {
   const dispatch = useAppDispatch();
 
   // TODO: unable  with prod
-  // if (!userName) redirect('error');
+  if (!userName) redirect('error');
 
   const clickAutoConfirm = (e: any) => {
     const element = e.target as HTMLElement;

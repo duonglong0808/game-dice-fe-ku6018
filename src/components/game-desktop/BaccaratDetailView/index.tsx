@@ -24,7 +24,7 @@ export function BaccaratDetailView(): JSX.Element {
       <div className={cx('h-[calc(87vh-4px)]')}>
         <LiveStreamBaccarat />
       </div>
-      <div className={cx('flex absolute left-0 right-0 bottom-[-58px]')}>
+      <div className={cx('flex absolute left-0 right-0 bottom-[-79px]')}>
         <HistoryBPT
           baccaratId={Number(gameBaccaratId)}
           col={10}
@@ -66,7 +66,7 @@ export function BaccaratDetailView(): JSX.Element {
         <GoodRoad />
         <div className="flex-1">
           {/* <iframe src={diceGameById?.idChat} className="h-full w-full"></iframe> */}
-          <ChatLive />
+          <ChatLive group="baccarat" />
         </div>
       </div>
     </div>

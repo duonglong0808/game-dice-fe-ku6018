@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
-  top: 226px;
-  right: 257px;
+  top: 25%;
+  right: 157px;
   width: 103px;
   height: 103px;
   z-index: 2;
@@ -15,7 +15,7 @@
   height: 103px;
   line-height: 103px;
   text-align: center;
-  font-size: 40px;
+  font-size: 48px;
   font-family: Arial;
   font-weight: bold;
   color: #fff;
@@ -57,8 +57,8 @@
 
 .wrapper-control {
   position: absolute;
-  top: 80%;
-  right: 46%;
+  top: 83%;
+  right: 43%;
   z-index: 2;
   will-change: transform;
   display: flex;
@@ -106,7 +106,7 @@
   }
 
   &__check {
-    background-position: -68px -62px;
+    background-position: -68px -62.8px;
   }
 }
 

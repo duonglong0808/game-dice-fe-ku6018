@@ -17,7 +17,7 @@ export function LiveStreamBaccarat(): JSX.Element {
         width="100%"
         height="855"
         src={gameBaccaratById?.idLive}
-        // src="https://www.youtube.com/embed/xhjQVKQYMQE?si=cwD-ICooa9nlUB5q"
+        // src="https://webgame202.deptraichasoai.lol/kugame/web/index.html?id=11201"
         className={cx('iframe_container')}></iframe>
 
       <div className="absolute top-0 left-0 right-0 bottom-0"></div>

@@ -41,73 +41,76 @@
 
 .right__action {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-left: 10px;
-  gap: 10px;
-  &__phinh {
-    width: 30px;
-    height: 24px;
-  }
-  &__auto {
-    width: 30px;
-    height: 24px;
-  }
-}
-
-.right__action {
-  position: relative;
-  margin-right: 130px;
+  width: 140px;
+  gap: 5px;
+  align-items: center;
+  // &__phinh {
+  //   width: 30px;
+  //   height: 24px;
+  // }
+  // &__auto {
+  //   width: 30px;
+  //   height: 24px;
+  // }
 }
 
 .right__action__auto,
 .right__action__phinh {
-  position: absolute;
   background-image: url(/Content/images/vn/json/bettingButtons.png);
   background-repeat: no-repeat;
-  background-position: -47px -345px;
-  width: 50px;
-  height: 31px;
+  background-position: -53px -413px;
+  width: 60px;
+  height: 38px;
   background-size: 203%;
-  right: -43px;
 
   &:hover {
-    background-position: -2px -107px;
+    background-position: -4px -128px;
     background-size: 180%;
-    height: 36px;
+    height: 39px;
   }
 }
 
 .right__action__auto {
-  background-position: 0px -386px;
-  right: -100px;
+  background-position: 0px -462px;
 
   &:hover {
-    background-position: -2px -65px;
-    background-size: 180%;
-    height: 36px;
+    background-position: -3px -74px;
+    background-size: 172%;
+    height: 39px;
   }
 }
 
 .phing_wrapper {
   position: absolute;
-  bottom: 150%;
+  bottom: 100%;
   display: flex;
-  width: 421px;
+  width: 458px;
   padding: 10px 0 5px 10px;
   background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  right: -60px;
+  right: 41%;
   z-index: 1;
   overflow: hidden;
 }
 
 .body__chips {
+  width: 70%;
+
   &--item {
-    width: 64px;
-    height: 54px;
+    width: 78px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+
+    &-active:hover {
+      filter: brightness(120%);
+    }
   }
 }
 

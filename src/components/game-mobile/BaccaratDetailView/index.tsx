@@ -398,7 +398,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               )}
             </div>
 
-            <div className="bg-white flex items-center relative h-[5.9svh]">
+            <div className="bg-white flex items-center h-[5.9svh]">
               <div className="flex-1 w-[calc(100%_-_56px)] h-full">
                 <ChipsList
                   alwayActive={true}
@@ -416,7 +416,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   className="h-full object-contain"
                 />
                 {openChipList ? (
-                  <div className="absolute left-0 right-0 bottom-full m-auto h-fit z-10 bg-[#141414]">
+                  <div className="absolute left-0 right-0 top-0 m-auto h-fit z-10 bg-[#141414] border-[1px] border-[#356492]">
                     <div className="text-center relative m-2 border-b-[1px] border-[#356492]">
                       <span className="text-white flex justify-center mb-1">
                         Cài đặt phỉnh
@@ -438,7 +438,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                               key={index}
                               width={68}
                               height={68}
-                              className="w-[56px] h-[56px] text-center"
+                              className="h-full object-contain text-center"
                               onClick={() => {
                                 if (indexChips.includes(index)) {
                                   setIndexChips((pre) => pre.filter((c) => c !== index));
@@ -603,7 +603,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               </div>
             </div>
 
-            <ChatLiveMobile />
+            <ChatLiveMobile group="baccarat" />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ export const EventSocket = {
   Disconnect: 'disconnect',
   Connection: 'connection',
   Data: 'data',
+  SendMessage: 'send-message',
 };
 
 export const ACCESS_TOKEN = 'access_token';
@@ -95,6 +96,7 @@ export const TypeEmitMessage = {
   updateStatusDice: 1,
   updatePoint: 2,
   updateStatusBaccarat: 3,
+  newMessage: 4,
 };
 
 export const pointPoker: any = {

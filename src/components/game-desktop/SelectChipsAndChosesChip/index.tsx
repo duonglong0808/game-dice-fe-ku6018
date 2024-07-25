@@ -44,7 +44,9 @@ export function SelectChipsAndChosesChip({
                   key={index}
                   width={68}
                   height={68}
-                  className={cx('body__chips--item')}
+                  className={cx('body__chips--item', {
+                    'body__chips--item-active': indexChips.includes(index),
+                  })}
                   onClick={() => {
                     if (indexChips.includes(index)) {
                       setIndexChips((pre) => pre.filter((c) => c !== index));
