@@ -102,7 +102,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
     if (!gameDiceById) {
       // TODO: rederic to error if not data game
       // router.replace('/mobile/game');
-      router.replace('/error');
+      // router.replace('/error');
     }
   }, []);
 
@@ -195,7 +195,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
             style={{ height: 'calc(100svh - 100svw*0.49 - 30px)' }}>
             <div
               className=" bg-white w-full flex justify-center p-[3px]"
-              style={{ height: 'calc(100% - 10.45svh - 188px)' }}>
+              style={{ height: 'calc(100% - 12.2svh - 188px)' }}>
               <div className="flex flex-col bg-[#f3f3f3] flex-wrap w-full h-full border-t-[1px] border-l-[1px] border-[#bcbcbc] rounded-sm">
                 <div className="basis-1/3 w-[28%]">
                   <TableItemMobile
@@ -336,7 +336,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
               </div>
             </div>
 
-            <div className="bg-white flex items-center h-[5.9svh]">
+            <div className="bg-white flex items-center h-[6.9svh]">
               <div className="flex-1 w-[calc(100%_-_56px)] h-full">
                 <ChipsList
                   alwayActive={true}
@@ -415,7 +415,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
                   }
                 }}
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_cancel.svg)] bg-no-repeat ml-2 pl-2 bg-[length:auto_65%]',
+                  'w-[24%] h-[67%] flex items-center justify-center text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_cancel.svg)] bg-no-repeat ml-2 pl-2 bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsDiceDetail != StatusDiceDetail.bet,
@@ -430,7 +430,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
               </button>
               <button
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_repeat.svg)] bg-no-repeat bg-[#1e8dde] shadow-[0_0_0_4px_#1e8dde] ml-3 pl-5 bg-[length:auto_65%]',
+                  'w-[24%] h-[67%] flex items-center justify-center text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_repeat.svg)] bg-no-repeat bg-[#1e8dde] shadow-[0_0_0_4px_#1e8dde] ml-3 pl-5 bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsDiceDetail != StatusDiceDetail.bet,
@@ -442,7 +442,7 @@ export function DetailDiceDetailMobile(): JSX.Element {
               <button
                 onClick={handleConfirmBet}
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_confirm.svg)] bg-no-repeat bg-[#0f9e4f] shadow-[0_0_0_4px_#0f9e4f] ml-3 pl-2 bg-[length:auto_65%]',
+                  'w-[24%] h-[67%] flex items-center justify-center text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_confirm.svg)] bg-no-repeat bg-[#0f9e4f] shadow-[0_0_0_4px_#0f9e4f] ml-3 pl-2 bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsDiceDetail != StatusDiceDetail.bet,
