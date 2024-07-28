@@ -9,6 +9,7 @@ const cx = classNames.bind({});
 
 export function ResultGameBaccarat(): JSX.Element {
   const { dataBaccaratDetailCurrent } = useAppSelector((state) => state.baccaratDetail);
+  // const gameBaccaratId = 1;
   const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
   const dataBaccaratDetailById = dataBaccaratDetailCurrent.find(
     (d) => d.gameBaccaratId == gameBaccaratId
@@ -39,7 +40,7 @@ export function ResultGameBaccarat(): JSX.Element {
 
     return (
       <div className="absolute bottom-0 left-0 right-0 z-10 lg:left-4 lg:right-0 lg:bottom-[calc(130px+23%)]">
-        <div className="bg-[#000000b3] flex lg:bg-[#04030b] lg:w-[253px] lg:h-[168px]">
+        <div className="bg-[#000000b3] flex lg:bg-[#04030b] lg:w-[275px] lg:h-[186px]">
           <div
             className={cx(
               'flex justify-end lg:block flex-1 py-[6px] lg:py-2 lg:m-1 border-[1px] rounded-sm',
@@ -50,7 +51,7 @@ export function ResultGameBaccarat(): JSX.Element {
                   statsBaccaratDetail != StatusBaccarat.check || pointPlayer < pointBanker,
               }
             )}>
-            <div className="text-center text-xl mb-1 font-semibold hidden lg:block">
+            <div className="text-center text-2xl mb-1 font-semibold hidden lg:block">
               <span className="text-[#0036ff]">Con</span>
               <span className="text-[#ffd800] ml-[6px]">{pointPlayer}</span>
             </div>
@@ -106,8 +107,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerPlayer[1]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="ml-[2px]"
                     />
                   ) : (
@@ -117,8 +118,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerPlayer[0]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="ml-1"
                     />
                   ) : (
@@ -130,8 +131,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerPlayer[2]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="rotate-90"
                     />
                   ) : (
@@ -155,7 +156,7 @@ export function ResultGameBaccarat(): JSX.Element {
                   statsBaccaratDetail != StatusBaccarat.check || pointPlayer > pointBanker,
               }
             )}>
-            <div className="text-center text-xl mb-1 font-semibold hidden lg:block">
+            <div className="text-center text-2xl mb-1 font-semibold hidden lg:block">
               <span className="text-[#db1002]">Cái</span>
               <span className="text-[#ffd800] ml-[6px]">{pointBanker}</span>
             </div>
@@ -210,8 +211,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerBanker[1]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="ml-[2px]"
                     />
                   ) : (
@@ -221,8 +222,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerBanker[0]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="ml-1"
                     />
                   ) : (
@@ -234,8 +235,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Content/images/poker/${dataBaccaratDetailById?.pokerBanker[2]}.png`}
-                      width={40}
-                      height={60}
+                      width={48}
+                      height={70}
                       className="rotate-90"
                     />
                   ) : (

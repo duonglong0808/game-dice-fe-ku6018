@@ -14,7 +14,7 @@ import { resetPointBetMain } from '@/lib/redux/app/userCurrent.slice';
 const cx = classNames.bind(styles);
 
 export function ControllerBaccarat(): JSX.Element {
-  const [typePlay, setTypePlay] = useState('old');
+  const [typePlay, setTypePlay] = useState('all');
   const [totalBet, setTotalBet] = useState(0);
   const [curChip, setCurrChip] = useState(0);
   const { dataBaccaratDetailCurrent, dataBetCurrent } = useAppSelector(
@@ -125,10 +125,10 @@ export function ControllerBaccarat(): JSX.Element {
       <ResultGameBaccarat />
       <div
         className={cx(
-          'bg-[url(/Content/images/vn/json/desktopBJ.png)] absolute left-0 right-0 bottom-[111px] bg-no-repeat z-[1] overflow-hidden ',
+          'bg-[url(/Content/images/vn/json/desktopBJ.png)] absolute left-0 right-0 bottom-[100px] bg-no-repeat z-[1] overflow-hidden ',
           {
-            'bg-[49px_0px] bg-[length:94%] h-[22%]': typePlay == 'old',
-            'bg-[49px_-181px] bg-[length:94%] h-[22%]': typePlay == 'all',
+            'bg-[49px_0px] bg-[length:96%] h-[23%]': typePlay == 'old',
+            'bg-[49px_-181px] bg-[length:96%] h-[23%]': typePlay == 'all',
           }
         )}>
         <div className={cx('live_action')}>
