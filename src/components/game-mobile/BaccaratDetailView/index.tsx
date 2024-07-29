@@ -404,6 +404,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   alwayActive={true}
                   curChip={Number(currentChip)}
                   setChips={(chip) => setCurrentChip(chip)}
+                  game="mc-baccarat"
                 />
               </div>
               <div className=" w-14 h-full">
