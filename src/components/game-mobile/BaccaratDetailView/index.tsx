@@ -31,8 +31,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
   const { dataBaccaratDetailCurrent, dataBetCurrent } = useAppSelector(
     (state) => state.baccaratDetail
   );
-  const gameBaccaratId = 2;
-  // const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
+  const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
   const dataBaccaratDetailById = dataBaccaratDetailCurrent.find(
     (d) => d.gameBaccaratId == gameBaccaratId
   );
@@ -47,7 +46,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
     if (!gameBaccaratById) {
       // TODO: rederic to error if not data game
       // router.replace('/mobile/game');
-      // router.replace('/error');
+      router.replace('/error');
     }
   }, []);
 
