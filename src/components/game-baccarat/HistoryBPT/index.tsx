@@ -80,7 +80,7 @@ export function HistoryBPT({
   }, [dataSort]);
 
   return (
-    <div className={cx('border-r-2 border-[#979797] bg-white', 'wrapper')}>
+    <div className={cx('border-r-[1px] border-[#979797] bg-white', 'wrapper')}>
       <table className={cx('CD_dataInput')} cellSpacing={0} cellPadding={0}>
         <tbody className={cx('table__body')}>
           {Array.from({ length: row }, (v, k) => k + 1).map((rowIndex) => (

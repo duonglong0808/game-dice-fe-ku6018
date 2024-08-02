@@ -46,7 +46,7 @@ export function HistoryDotBaccarat({
                     'relative bg-white border-b-[1px] border-r-[1px] border-[#e6e6e6] ',
                     'table__td'
                   )}>
-                  <div className="flex flex-col justify-between mx-auto flex-wrap  w-[13.6px] h-[14.5px] lg:w-[16.5px] lg:h-[18px]">
+                  <div className="flex flex-col justify-between mx-auto flex-wrap w-[12.5px] h-[14.2px] lg:w-[16.5px] lg:h-[18px]">
                     {dataPosition[`${colIndex}${rowIndex}`]?.value?.map((item: any) => (
                       <span
                         className={cx('w-[6px] h-[6px] lg:w-[8px] lg:h-[8px] rounded-full', {

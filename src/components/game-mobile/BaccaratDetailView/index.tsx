@@ -31,7 +31,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
   const { dataBaccaratDetailCurrent, dataBetCurrent } = useAppSelector(
     (state) => state.baccaratDetail
   );
-  const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
+  const gameBaccaratId = 2;
+  // const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
   const dataBaccaratDetailById = dataBaccaratDetailCurrent.find(
     (d) => d.gameBaccaratId == gameBaccaratId
   );
@@ -46,7 +47,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
     if (!gameBaccaratById) {
       // TODO: rederic to error if not data game
       // router.replace('/mobile/game');
-      router.replace('/error');
+      // router.replace('/error');
     }
   }, []);
 
@@ -180,9 +181,9 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           // className="w-full h-[35svh] "
           // src={gameBaccaratById?.idLiveMobile}
           src={'https://webgamebcr.deptraichasoai.lol/kugame/ios/index.html?id=11201'}></iframe>
-        <div className="absolute top-0 left-0 right-0 h-[calc(100svw*0.50)]"></div>
+        <div className="absolute top-0 left-0 right-0 h-[calc(100svw*0.492)]"></div>
       </div>
-      <div className="fixed bottom-0 left-0 right-0 z-[6] bg-black top-[calc(100svw*0.50)]">
+      <div className="fixed bottom-0 left-0 right-0 z-[6] bg-black top-[calc(100svw*0.492)]">
         <div
           className="flex flex-col h-full"
           //  style={{ height: 'calc(100svw*0.49)' }}
@@ -213,7 +214,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
             style={{ height: 'calc(100svh - 100svw*0.49 - 30px)' }}>
             <div
               className=" bg-white w-full flex justify-center p-[3px] relative"
-              style={{ height: 'calc(100% - 13.5svh - 190px)' }}>
+              style={{ height: 'calc(100% - 14.5svh - 193px)' }}>
               <ResultGameBaccarat />
               <div
                 onClick={() =>
@@ -398,7 +399,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               )}
             </div>
 
-            <div className="bg-white flex items-center h-[9svh]">
+            <div className="bg-white flex items-center h-[8.5svh]">
               <div className="flex-1 w-[calc(100%_-_56px)] h-full">
                 <ChipsList
                   alwayActive={true}
@@ -513,7 +514,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 <span className="block w-full text-center ml-2">OK</span>
               </button>
               <button className=" h-[88%] flex justify-start items-center text-white text-center bg-contain rounded-sm bg-[url(/Areas/Mobile/Images/icon_change.svg)] bg-no-repeat">
-                <span className="block w-full mr-1 text-sm">Đổi bàn</span>
+                <span className="block w-full mr-[10px] text-sm">Đổi bàn</span>
               </button>
             </div>
 
@@ -563,8 +564,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex h-[16.5svh]">
-              <div className="w-[35%]">
+            <div className="flex">
+              <div className="w-[34%]">
                 <HistoryBPT
                   baccaratId={Number(gameBaccaratId)}
                   col={6}
@@ -574,8 +575,8 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   isLive
                 />
               </div>
-              <div className="flex w-[65%]">
-                <div className="w-[86%]">
+              <div className="flex w-[66%]">
+                <div className="w-[87%]">
                   <HistoryOX baccaratId={Number(gameBaccaratId)} col={19} row={6} isLive />
                   <div className="grid grid-cols-3">
                     <HistoryRingBaccarat col={5} row={3} baccaratId={Number(gameBaccaratId)} />
@@ -583,7 +584,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                     <HistoryLineBaccarat col={5} row={3} baccaratId={Number(gameBaccaratId)} />
                   </div>
                 </div>
-                <div className="w-[14%] bg-white">
+                <div className="w-[13%] bg-white">
                   <div className="h-[50%] border-[1px] border-t-0 text-center border-[#979797]">
                     <span className="block text-[#db1002] font-bold text-[10px] py-1">Hỏi Cái</span>
                     <div className="flex justify-center items-center mx-[1px] rounded-xl p-1 bg-[#dddddd] px-[2px]">
