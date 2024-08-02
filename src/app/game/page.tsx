@@ -12,8 +12,8 @@ import { BaccaratDetailView } from '@/components/game-desktop/BaccaratDetailView
 export default function GamePage(): JSX.Element {
   const { gameDiceId } = useAppSelector((state) => state.diceGame);
   // const gameDiceId = 1;
-  // const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
-  const gameBaccaratId = 1;
+  const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
+  // const gameBaccaratId = 1;
   console.log('🚀 ~ GamePage ~ gameBaccaratId:', gameBaccaratId);
   const searchParams = useSearchParams();
   const game = searchParams.get('game') || 'dice';
