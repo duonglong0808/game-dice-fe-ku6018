@@ -9,7 +9,7 @@ const cx = classNames.bind({});
 
 export function ResultGameBaccarat(): JSX.Element {
   const { dataBaccaratDetailCurrent } = useAppSelector((state) => state.baccaratDetail);
-  // const gameBaccaratId = 1;
+  // const gameBaccaratId = 2;
   const { gameBaccaratId } = useAppSelector((state) => state.baccaratGame);
   const dataBaccaratDetailById = dataBaccaratDetailCurrent.find(
     (d) => d.gameBaccaratId == gameBaccaratId
@@ -63,8 +63,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerPlayer[2]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="rotate-90"
                     />
                   ) : (
@@ -76,8 +76,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerPlayer[1]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="ml-[2px]"
                     />
                   ) : (
@@ -87,8 +87,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerPlayer[0]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="ml-1"
                     />
                   ) : (
@@ -172,8 +172,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerBanker[1]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="ml-[2px]"
                     />
                   ) : (
@@ -183,8 +183,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerBanker[0]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="ml-1"
                     />
                   ) : (
@@ -196,8 +196,8 @@ export function ResultGameBaccarat(): JSX.Element {
                     <Image
                       alt="pocker"
                       src={`/Areas/Mobile/Images/poker/${dataBaccaratDetailById?.pokerBanker[2]}.svg`}
-                      width={28}
-                      height={40}
+                      width={32}
+                      height={44}
                       className="rotate-90"
                     />
                   ) : (

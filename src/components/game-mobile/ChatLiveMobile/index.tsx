@@ -64,7 +64,7 @@ export function ChatLiveMobile({ group }: { group: string }): JSX.Element {
 
   return (
     <div>
-      <div className="bg-[#000] h-[38px] flex items-center">
+      <div className="bg-[#000] h-[45px] flex items-center">
         <div
           className={cx(
             'absolute left-0 z-10 right-0 bottom-[38px] bg-white border-t-2 border-[#aaa]',

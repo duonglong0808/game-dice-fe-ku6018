@@ -16,7 +16,7 @@ export function SideBarHomeGame({
   const { userName, name } = useAppSelector((state) => state.userCurrent);
 
   if (!userName) {
-    // redirect('/error');
+    redirect('/error');
   }
 
   return openSideBar ? (

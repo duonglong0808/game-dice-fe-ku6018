@@ -46,7 +46,7 @@ export function HistoryLineBaccarat({
                     'relative bg-white border-b-[1px] border-r-[1px] border-[#e6e6e6] ',
                     'table__td'
                   )}>
-                  <div className="flex flex-col justify-between mx-auto flex-wrap w-[13.6px] h-[12px] lg:w-[16.5px] lg:h-[18px] p-[1px]">
+                  <div className="flex flex-col justify-between mx-auto flex-wrap w-[13.6px] h-[14.5px] lg:w-[16.5px] lg:h-[18px] p-[1px]">
                     {dataPosition[`${colIndex}${rowIndex}`]?.value?.map((item: any) => (
                       <span
                         className={cx(

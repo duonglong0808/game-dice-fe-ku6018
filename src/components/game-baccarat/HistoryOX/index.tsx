@@ -183,7 +183,7 @@ export function HistoryOX({
                           'border-[1px] border-[#dc0000!important]':
                             dataPosition[`${colIndex}${rowIndex}`]?.value == 3 ||
                             dataPosition[`${colIndex}${rowIndex}`]?.value == 4,
-                          'bg-[url(/Content/images/icon_s6.svg)] bg-no-repeat bg-center bg-contain':
+                          'bg-[url(/Content/images/icon_s6.svg)] bg-[length:122%] lg:bg-contain bg-no-repeat bg-center':
                             dataPosition[`${colIndex}${rowIndex}`]?.value == 6,
                           'h-3 w-3': !isLive,
                           'table__td--box-live': isLive,

@@ -173,16 +173,16 @@ export function BaccaratDetailViewMobile(): JSX.Element {
       <CountDownBetBaccarat />
       <div className="fixed top-0 left-0 right-0 bottom-0 overflow-hidden bg-[#111]">
         <iframe
+          //
           allow="autoplay; encrypted-media"
           // allowFullScreen
-          className="w-svw h-svh scale-[1.04]"
+          className="w-svw h-svh scale-[1.03]"
           // className="w-full h-[35svh] "
-          src={gameBaccaratById?.idLiveMobile}
-          // src={'https://gat6.vnskuvideo.com/ios.html?id=71101'}
-        ></iframe>
-        <div className="absolute top-0 left-0 right-0 h-[calc(100svw*0.49)]"></div>
+          // src={gameBaccaratById?.idLiveMobile}
+          src={'https://webgamebcr.deptraichasoai.lol/kugame/ios/index.html?id=11201'}></iframe>
+        <div className="absolute top-0 left-0 right-0 h-[calc(100svw*0.50)]"></div>
       </div>
-      <div className="fixed bottom-0 left-0 right-0 z-[6] bg-black top-[calc(100svw*0.49)]">
+      <div className="fixed bottom-0 left-0 right-0 z-[6] bg-black top-[calc(100svw*0.50)]">
         <div
           className="flex flex-col h-full"
           //  style={{ height: 'calc(100svw*0.49)' }}
@@ -213,7 +213,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
             style={{ height: 'calc(100svh - 100svw*0.49 - 30px)' }}>
             <div
               className=" bg-white w-full flex justify-center p-[3px] relative"
-              style={{ height: 'calc(100% - 10.45svh - 188px)' }}>
+              style={{ height: 'calc(100% - 13.5svh - 190px)' }}>
               <ResultGameBaccarat />
               <div
                 onClick={() =>
@@ -398,7 +398,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               )}
             </div>
 
-            <div className="bg-white flex items-center h-[5.9svh]">
+            <div className="bg-white flex items-center h-[9svh]">
               <div className="flex-1 w-[calc(100%_-_56px)] h-full">
                 <ChipsList
                   alwayActive={true}
@@ -470,13 +470,13 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex border-t-[1px] items-center justify-around h-[5svh] min- border-b-[1px] border-[#ccc] bg-[#f3f3f3] w-full mx-auto">
+            <div className="grid grid-cols-4 gap-[10px] border-t-[1px] items-center justify-around h-[6svh] min- border-b-[1px] border-[#ccc] bg-[#f3f3f3] w-full px-2">
               <button
                 onClick={() => {
                   dispatch(resetDataBetBaccarat());
                 }}
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_cancel.svg)] bg-no-repeat ml-2 pl-2 bg-[length:auto_65%]',
+                  'h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_cancel.svg)] bg-no-repeat pl-2 bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsBaccaratDetail !== StatusBaccarat.bet,
@@ -487,33 +487,33 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                   }
                 )}
                 style={{ backgroundPositionX: '13%', backgroundPositionY: 'center' }}>
-                Hủy
+                <span className="block w-full text-center ml-2">Hủy</span>
               </button>
               <button
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_repeat.svg)] bg-no-repeat bg-[#1e8dde] shadow-[0_0_0_4px_#1e8dde] ml-3 pl-5 bg-[length:auto_65%]',
+                  'h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_repeat.svg)] bg-no-repeat bg-[#1e8dde] shadow-[0_0_0_4px_#1e8dde] bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsBaccaratDetail !== StatusBaccarat.bet,
                   }
                 )}
                 style={{ backgroundPositionX: '13%', backgroundPositionY: 'center' }}>
-                Lặp lại
+                <span className="block w-full text-center ml-2">Lặp lại</span>
               </button>
               <button
                 onClick={handleConfirmBet}
                 className={classNames(
-                  'w-[24%] h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_confirm.svg)] bg-no-repeat bg-[#0f9e4f] shadow-[0_0_0_4px_#0f9e4f] ml-3 pl-2 bg-[length:auto_65%]',
+                  'h-[67%] text-sm text-white rounded-sm border-[1px] border-[#fff] bg-[url(/Areas/Mobile/Images/btn_confirm.svg)] bg-no-repeat bg-[#0f9e4f] shadow-[0_0_0_4px_#0f9e4f]  bg-[length:auto_65%]',
                   {
                     'bg-[#929292] shadow-[0_0_0_4px_#929292]':
                       statsBaccaratDetail !== StatusBaccarat.bet,
                   }
                 )}
                 style={{ backgroundPositionX: '13%', backgroundPositionY: 'center' }}>
-                OK
+                <span className="block w-full text-center ml-2">OK</span>
               </button>
-              <button className="w-[23%] h-[88%] flex justify-start items-center text-white text-center bg-contain rounded-sm bg-[url(/Areas/Mobile/Images/icon_change.svg)] bg-no-repeat ml-3">
-                <span className="block ml-2 text-sm">Đổi bàn</span>
+              <button className=" h-[88%] flex justify-start items-center text-white text-center bg-contain rounded-sm bg-[url(/Areas/Mobile/Images/icon_change.svg)] bg-no-repeat">
+                <span className="block w-full mr-1 text-sm">Đổi bàn</span>
               </button>
             </div>
 
@@ -522,40 +522,40 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 <span className="block w-2 mx-2 bg-[url(/Areas/Mobile/Images/btn_MT_gameArrow.svg)] bg-no-repeat bg-center "></span>
                 <div className="flex-1 flex items-center overflow-auto">
                   <div className="flex mr-4 items-baseline">
-                    <span className="text-[#f00] mr-3 text-sm font-semibold">L</span>
-                    <span className="text-black text-sm font-semibold">552</span>
+                    <span className="text-[#f00] mr-3 text-sm font-semibold">Cái</span>
+                    <span className="text-black text-sm font-semibold">33</span>
                   </div>
                   <div className="flex mr-4 items-baseline">
-                    <span className="text-[#0036ff] mr-3 text-sm font-semibold">C</span>
-                    <span className="text-black text-sm font-semibold">522</span>
+                    <span className="text-[#0036ff] mr-3 text-sm font-semibold">Con</span>
+                    <span className="text-black text-sm font-semibold">24</span>
                   </div>
                   <div className="flex mr-4 items-baseline">
-                    <span className="text-[#f00] mr-3 text-sm font-semibold">T</span>
-                    <span className="text-black text-sm font-semibold">422</span>
+                    <span className="text-[#01ab48] mr-3 text-sm font-semibold">Hòa</span>
+                    <span className="text-black text-sm font-semibold">4</span>
                   </div>
                   <div className="flex mr-4 items-baseline">
-                    <span className="text-[#0036ff] mr-3 text-sm font-semibold">X</span>
-                    <span className="text-black text-sm font-semibold">398</span>
+                    <span className="text-[#0036ff] mr-3 text-sm font-semibold">Đôi</span>
+                    <span className="text-black text-sm font-semibold">5</span>
                   </div>
 
-                  <div className="flex mr-4 items-end">
-                    <span className="relative bottom-[1px] w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs0.svg)] bg-no-repeat bg-center"></span>
-                    <span className="text-black text-sm font-semibold">62</span>
+                  <div className="flex mr-4 items-center">
+                    <span className="relative w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Content/images/icon_s6.svg)] bg-no-repeat bg-center"></span>
+                    <span className="text-black text-sm font-semibold">2</span>
                   </div>
-                  <div className="flex mr-4 items-end">
-                    <span className="relative bottom-[1px] w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs1.svg)] bg-no-repeat bg-center"></span>
+                  <div className="flex mr-4 items-center">
+                    <span className="relative w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs1.svg)] bg-no-repeat bg-center"></span>
                     <span className="text-black text-sm font-semibold">280</span>
                   </div>
-                  <div className="flex mr-4 items-end">
-                    <span className="relative bottom-[1px] w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs2.svg)] bg-no-repeat bg-center"></span>
+                  <div className="flex mr-4 items-center">
+                    <span className="relative w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs2.svg)] bg-no-repeat bg-center"></span>
                     <span className="text-black text-sm font-semibold">445</span>
                   </div>
-                  <div className="flex mr-4 items-end">
-                    <span className="relative bottom-[1px] w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs3.svg)] bg-no-repeat bg-center"></span>
+                  <div className="flex mr-4 items-center">
+                    <span className="relative w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs3.svg)] bg-no-repeat bg-center"></span>
                     <span className="text-black text-sm font-semibold">293</span>
                   </div>
-                  <div className="flex mr-4 items-end">
-                    <span className="relative bottom-[1px] w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs4.svg)] bg-no-repeat bg-center"></span>
+                  <div className="flex mr-4 items-center">
+                    <span className="relative w-[15px] h-[15px] mr-2 bg-contain bg-[url(/Areas/Mobile/Images/report/CD/img_CDs4.svg)] bg-no-repeat bg-center"></span>
                     <span className="text-black text-sm font-semibold">60</span>
                   </div>
                 </div>
@@ -563,7 +563,7 @@ export function BaccaratDetailViewMobile(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex">
+            <div className="flex h-[16.5svh]">
               <div className="w-[35%]">
                 <HistoryBPT
                   baccaratId={Number(gameBaccaratId)}
@@ -575,15 +575,15 @@ export function BaccaratDetailViewMobile(): JSX.Element {
                 />
               </div>
               <div className="flex w-[65%]">
-                <div className="w-[87%]">
+                <div className="w-[86%]">
                   <HistoryOX baccaratId={Number(gameBaccaratId)} col={19} row={6} isLive />
-                  <div className="flex">
+                  <div className="grid grid-cols-3">
                     <HistoryRingBaccarat col={5} row={3} baccaratId={Number(gameBaccaratId)} />
                     <HistoryDotBaccarat col={5} row={3} baccaratId={Number(gameBaccaratId)} />
                     <HistoryLineBaccarat col={5} row={3} baccaratId={Number(gameBaccaratId)} />
                   </div>
                 </div>
-                <div className="w-[13%] bg-white">
+                <div className="w-[14%] bg-white">
                   <div className="h-[50%] border-[1px] border-t-0 text-center border-[#979797]">
                     <span className="block text-[#db1002] font-bold text-[10px] py-1">Hỏi Cái</span>
                     <div className="flex justify-center items-center mx-[1px] rounded-xl p-1 bg-[#dddddd] px-[2px]">
