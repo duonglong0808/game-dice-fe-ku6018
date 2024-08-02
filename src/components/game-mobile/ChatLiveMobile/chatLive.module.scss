@@ -71,7 +71,7 @@
     content: '';
     width: 23px;
     height: 23px;
-    background-image: url('/Content/Images/chat/icon_faceIcon.svg');
+    background-image: url('/Content/images/chat/icon_faceIcon.svg');
     background-size: 23px 23px;
     opacity: 0.25;
   }
@@ -136,7 +136,7 @@
 .sendBtn .btn_sendChat {
   &::after {
     content: '';
-    background: url('/Content/Images/chat/send.svg') no-repeat center top;
+    background: url('/Content/images/chat/send.svg') no-repeat center top;
     background-size: 100% auto;
     margin: 3px 0 0 3px;
     width: 27px;
