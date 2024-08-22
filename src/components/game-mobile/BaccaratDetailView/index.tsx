@@ -178,8 +178,9 @@ export function BaccaratDetailViewMobile(): JSX.Element {
           // allowFullScreen
           className="w-svw h-svh scale-[1.03]"
           // className="w-full h-[35svh] "
-          // src={gameBaccaratById?.idLiveMobile}
-          src={'https://webgamebcr.deptraichasoai.lol/kugame/ios/index.html?id=11201'}></iframe>
+          src={gameBaccaratById?.idLiveMobile}
+          // src={'https://webgamebcr.deptraichasoai.lol/kugame/ios/index.html?id=11201'}
+        ></iframe>
         <div className="absolute top-0 left-0 right-0 h-[calc(100svw*0.492)]"></div>
       </div>
       <div className="fixed bottom-0 left-0 right-0 z-[6] bg-black top-[calc(100svw*0.492)]">
