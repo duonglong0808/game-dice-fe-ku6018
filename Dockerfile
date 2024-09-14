@@ -29,11 +29,18 @@ LABEL author="duonglongg"
 
 WORKDIR /app
 
+# Thiết lập biến môi trường cho Next.js
+ENV NODE_ENV=production
+
 COPY --from=build /app/public ./public
-COPY --from=build /app/next.config.js ./
+COPY --from=build /app/next.config.mjs ./
 
 COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
+
+# Đảm bảo quyền thực thi cho server.js
+RUN chmod +x /app/server.js \
+    && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 3000
 
